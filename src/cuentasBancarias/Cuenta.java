@@ -23,21 +23,25 @@ public class Cuenta implements Icuenta{
     public void comprar(int factura, int noCuenta, int nip) {
         if (logIn(noCuenta, nip)) {
             fondos = fondos - factura;
-            consutarFondos();   
+            consultarFondos();   
         } else {
             System.out.println("El numero de cuenta o el nip, son incorrectos.");
         }
     }
 
     @Override
-    public void consutarFondos(){
+    public void consultarFondos(){
         System.out.println("Saldo de la cuenta: " + fondos);
     }
 
-    private boolean logIn(int noCuenta, int nip){
+    public boolean logIn(int noCuenta, int nip){
         if (noCuenta == this.noCuenta && nip == this.nip) {
             return true;
         }
         return false;
+    }
+
+    public Cliente getClienteAsociado(){
+        return this.clienteAsociado;
     }
 }
