@@ -10,11 +10,11 @@ public class ProxyCuenta implements Icuenta{
     }
 
     public void comprar(int factura, int noCuenta, int nip){
-
+        actual.comprar(factura, noCuenta, nip);
     }
 
     @Override
     public void consultarFondos(){
-        return;
+        this.actual.consultarFondos();
     }
 }
