@@ -17,4 +17,8 @@ public class Cliente {
             int telefono, String direccion, Cuenta cuentaAsociada, Object paisDeOrigen, int id) {
 
     }
+
+    public String getNombreDeUsuario(){
+        return this.nombreUsuario;
+    }
 }
