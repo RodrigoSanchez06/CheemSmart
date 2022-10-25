@@ -1,5 +1,7 @@
 package cliente;
 
+import cuentasBancarias.Cuenta;
+
 public class Cliente {
 
     private String nombreUsuario;
@@ -7,12 +9,12 @@ public class Cliente {
     private String nombre;
     private int telefono;
     private String direccion;
-    private Object CuentaAsociada; // AUN NO VEMOS CUENTA BANCARIA, FALTA!!
+    private Cuenta CuentaAsociada; // AUN NO VEMOS CUENTA BANCARIA, FALTA!!
     private Object paisDeOrigen; // hay que ver que rollo aqui con las regiones. FALTA!!
     private int id;
 
     public Cliente(String nombreUsuario, String contraseña, String nombre,
-            int telefono, String direccion, Object cuentaAsociada, Object paisDeOrigen, int id) {
+            int telefono, String direccion, Cuenta cuentaAsociada, Object paisDeOrigen, int id) {
 
     }
 }
