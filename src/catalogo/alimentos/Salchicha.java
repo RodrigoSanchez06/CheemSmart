@@ -6,7 +6,7 @@ import catalogo.Producto;
  * Clase que representa a un producto Chocokrispi (implementa a la interfaz
  * producto).
  */
-public class Salchicha implements Producto {
+public class salchicha implements Producto {
 
     /**
      * regresa el nombre del producto.
