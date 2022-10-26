@@ -5,23 +5,43 @@ import cliente.Cliente;
 import cuentasBancarias.Cuenta;
 import idiomas.EspanniolEsp;
 import idiomas.EspanniolLatm;
+import idiomas.Idioma;
 import idiomas.Ingles;
 
 public class CheemSmart{
+
+    private static Idioma idioma;
     public static void main(String[] args) {
 
         LinkedList<Cliente> listaClientes = agregaClientes();
         Scanner entrada = new Scanner(System.in);
 
         System.out.println("\n******Bienvenido a CheemSmart******\n");
-        System.out.println("\n Para entrar a la tienda virtual Inicia Sesión.\n");
-        System.out.println("Introduce tu Nombre de usuario: ");
-        String nombreUsuario = entrada.nextLine();
-        System.out.println("Introduce la contraseña: ");
-        String password = entrada.nextLine();
-        for (Cliente c : listaClientes) {
-            
+        System.out.println("Para entrar a la tienda virtual Inicia Sesión.\n");
+        boolean credencialesCorrectas = false;
+        Cliente clienteActual = new Cliente();
+        while (!credencialesCorrectas) {
+                System.out.println("Introduce tu Nombre de usuario: ");
+                String nombreUsuario = entrada.nextLine();
+                System.out.println("Introduce la contraseña: ");
+                String pass = entrada.nextLine();
+            for (Cliente c : listaClientes) {
+                if (c.getNombreDeUsuario().equals(nombreUsuario) && c.getContraseña().equals(pass)) {    
+                    credencialesCorrectas = true;
+                    clienteActual = c;
+                    break;
+                } 
+            } 
+            if(credencialesCorrectas == true ) break;
+            System.out.println("Lo siento, nombre de usuario o contraseña son incorrectos, intentalo de nuevo");  
         }
+        cambioIdioma(clienteActual.getPaisDeOrigen());
+        idioma.saludo();
+        idioma.opciones();
+    }
+
+    private static void cambioIdioma(Idioma idiomaActual){
+        idioma = idiomaActual;
     }
 
     public static LinkedList<Cliente> agregaClientes(){
