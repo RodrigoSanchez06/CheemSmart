@@ -6,7 +6,7 @@ import catalogo.Producto;
  * Clase que representa a un producto Chocokrispi (implementa a la interfaz
  * producto).
  */
-public class Chocokrispi implements Producto {
+public class Chocokrispis implements Producto {
 
     /**
      * regresa el nombre del producto.
@@ -15,7 +15,7 @@ public class Chocokrispi implements Producto {
      */
     @Override
     public String nombre() {
-        return "Chocokrispi";
+        return "Chocokrispis";
     }
 
     /**
