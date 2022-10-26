@@ -1,6 +1,7 @@
 package cliente;
 
 import cuentasBancarias.Cuenta;
+import idiomas.Idioma;
 
 public class Cliente {
 
@@ -10,10 +11,10 @@ public class Cliente {
     private int telefono;
     private String direccion;
     private Cuenta cuentaAsociada; // AUN NO VEMOS CUENTA BANCARIA, FALTA!!
-    private Object paisDeOrigen; // hay que ver que rollo aqui con las regiones. FALTA!!
+    private Idioma paisDeOrigen; // hay que ver que rollo aqui con las regiones. FALTA!!
     private int id;
 
-    public Cliente(String nombreUsuario, String contraseña, String nombre, int telefono, String direccion, Cuenta cuentaAsociada, Object paisDeOrigen, int id) {
+    public Cliente(String nombreUsuario, String contraseña, String nombre, int telefono, String direccion, Cuenta cuentaAsociada, Idioma paisDeOrigen, int id) {
         this.nombreUsuario=nombreUsuario;
         this.contraseña=contraseña;
         this.nombre=nombre;
@@ -22,6 +23,9 @@ public class Cliente {
         this.cuentaAsociada=cuentaAsociada;
         this.paisDeOrigen=paisDeOrigen;
         this.id=id;
+    }
+
+    public Cliente(){
     }
   
     public String getNombreDeUsuario(){
@@ -44,7 +48,7 @@ public class Cliente {
         return this.direccion;
     }
 
-    public Object getPaisDeOrigen(){
+    public Idioma getPaisDeOrigen(){
         return this.paisDeOrigen;
     }
 
@@ -76,7 +80,7 @@ public class Cliente {
         this.direccion=direccion;
     }
 
-    public void setPaisDeOrigen(Object paisDeOrigen){
+    public void setPaisDeOrigen(Idioma paisDeOrigen){
         this.paisDeOrigen=paisDeOrigen;
     }
 
