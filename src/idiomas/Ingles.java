@@ -26,7 +26,7 @@ public class Ingles implements Idioma{
      * en el idioma actual.
      */
     @Override
-    public void descuentoPropaganda() {
+    public void descuentoPropaganda(boolean existePropaganda) {
         System.out.println("today's deals");
     }
 
@@ -63,5 +63,20 @@ public class Ingles implements Idioma{
     @Override
     public void opcionIncorrecta() {
         System.out.println("Incorrect option, try again!");
+    }
+
+    /**
+     * Obtiene el nombre de la región.
+     * @return nombre de la reguión
+     */
+    @Override
+    public String getRegion() {
+        return "EUA";
+    }
+
+    @Override
+    public void asignaProbabilidadesDescuentos() {
+        // TODO Auto-generated method stub
+        
     }
 }
