@@ -18,4 +18,6 @@ public interface Departamento {
      * @return Devuelve un iterador del catalogo en cuestion
      */
     Iterator<Producto> obtenerIterador();
+
+    void aplicarDescuentoDepartamento(double d);
 }

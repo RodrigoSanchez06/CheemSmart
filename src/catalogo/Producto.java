@@ -9,23 +9,27 @@ public interface Producto {
      * regresa el nombre del producto.
      * @return nombre del producto.
      */
-    public String nombre();
+    String nombre();
 
     /**
      * regresa el precio del producto.
      * @return precio del producto.
      */
-    public double precio();
+    double precio();
 
     /**
      * regresa el departamento al que pertenece el producto.
      * @return departamento del producto.
      */
-    public String departamento();
+    String departamento();
 
     /**
      * regresa el código de barras del producto.
      * @return codigo de barras del producto. 
      */
-    public double codigoBarras();
+    String codigoBarras();
+
+    void aplicarDescuento(double d);
+
+    double getMultiplicadorDescuento();
 }

@@ -40,4 +40,10 @@ public class Electronicos implements Departamento {
         return electro.iterator();
     }
 
+    public void aplicarDescuentoDepartamento(double d){
+        Iterator<Producto> i = electro.iterator();
+        while(i.hasNext())
+            i.next().aplicarDescuento(d);
+    }
+
 }

@@ -1,5 +1,9 @@
 package idiomas;
 
+import java.util.LinkedList;
+
+import catalogo.Departamento;
+
 /**
  * Interfaz idioma, sirve para definir el comportamiento de un idioma
  * del sistema CheemSmart
@@ -53,4 +57,6 @@ public interface Idioma {
      * departamentos de adquirir un desciento dependiendo la región,
      */
     public void asignaProbabilidadesDescuentos();
+
+    LinkedList<Departamento> getProbabilidades();
 }
