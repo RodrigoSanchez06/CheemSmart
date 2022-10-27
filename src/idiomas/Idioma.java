@@ -20,7 +20,7 @@ public interface Idioma {
      * Da a conocer los descuentos disponibles en la región
      * en el idioma actual.
      */
-    public void descuentoPropaganda();
+    public void descuentoPropaganda(boolean existePropaganda);
 
     /**
      * Da a conocer las opciones disponibles en el idioma actual.
@@ -41,4 +41,16 @@ public interface Idioma {
      * Hace saber al usuario que la opción que introdujo fue incorrecta.
      */
     public void opcionIncorrecta();
+
+    /**
+     * Obtiene el nombre de la región.
+     * @return nombre de la reguión
+     */
+    public String getRegion();
+
+    /**
+     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre 
+     * departamentos de adquirir un desciento dependiendo la región,
+     */
+    public void asignaProbabilidadesDescuentos();
 }

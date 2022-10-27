@@ -1,9 +1,15 @@
 package idiomas;
 
+import java.util.LinkedList;
+
+import catalogo.Departamento;
+
 /**
  * Clase que Representa al idioma español (LATAM) del sistema CheemSmart.
  */
 public class EspanniolLatm implements Idioma{
+
+    private LinkedList<Departamento> probabilidadesDepartamentos;
 
     /**
      * Saluda al usuario en el idioma actual.
@@ -26,7 +32,7 @@ public class EspanniolLatm implements Idioma{
      * en el idioma actual.
      */
     @Override
-    public void descuentoPropaganda() {
+    public void descuentoPropaganda(boolean existePropaganda) {
         System.out.println("estas son las ofertas del día de hoy: ");
     }
 
@@ -64,5 +70,23 @@ public class EspanniolLatm implements Idioma{
     @Override
     public void opcionIncorrecta() {
         System.out.println("Opcion inválida intente de nuevo por favor."); 
+    }
+
+    /**
+     * Obtiene el nombre de la región.
+     * @return nombre de la reguión
+     */
+    @Override
+    public String getRegion() {
+        return "LATAM";
+    }
+
+    /**
+     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre 
+     * departamentos de adquirir un desciento dependiendo la región,
+     */
+    @Override
+    public void asignaProbabilidadesDescuentos() {
+   
     }
 }

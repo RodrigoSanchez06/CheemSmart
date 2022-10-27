@@ -1,9 +1,18 @@
 package idiomas;
 
+import java.util.LinkedList;
+
+import catalogo.Departamento;
+import catalogo.alimentos.Alimentos;
+import catalogo.electrodomesticos.Electrodomesticos;
+import catalogo.electronicos.Electronicos;
+
 /**
  * Clase que Representa al idioma español (España) del sistema CheemSmart.
  */
 public class EspanniolEsp implements Idioma{
+
+    private LinkedList<Departamento> probabilidadesDepartamentos;
 
     /**
      * Saluda al usuario en el idioma actual.
@@ -26,8 +35,10 @@ public class EspanniolEsp implements Idioma{
      * en el idioma actual.
      */
     @Override
-    public void descuentoPropaganda() {
-        System.out.println("Ostia, aqui te presentamos las ofertas de hoy.");
+    public void descuentoPropaganda(boolean existePropaganda) {
+        if (existePropaganda) {
+            System.out.println("Ostia, aqui te presentamos las ofertas de hoy.");   
+        }
     }
 
     /**
@@ -64,6 +75,27 @@ public class EspanniolEsp implements Idioma{
     @Override
     public void opcionIncorrecta() {
         System.out.println("Vaya, te has equivocado de opción tío :(.");      
+    }
+
+    /**
+     * Obtiene el nombre de la región.
+     * @return nombre de la reguión
+     */
+    @Override
+    public String getRegion() {
+        return "ESP";
+    }
+
+    /**
+     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre 
+     * departamentos de adquirir un desciento dependiendo la región,
+     */
+    @Override
+    public void asignaProbabilidadesDescuentos() {
+        probabilidadesDepartamentos.add(new Electrodomesticos());
+        probabilidadesDepartamentos.add(new Electrodomesticos());
+        probabilidadesDepartamentos.add(new Alimentos());
+        probabilidadesDepartamentos.add(new Electronicos());
     }
  
 
