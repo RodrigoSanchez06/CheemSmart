@@ -1,9 +1,21 @@
 package idiomas;
 
+import catalogo.electronicos.Electronicos;
+import catalogo.electrodomesticos.Electrodomesticos;
+import catalogo.alimentos.Alimentos;
+import java.util.LinkedList;
+import catalogo.Departamento;
+
 /**
  * Clase que Representa al idioma Inglés del sistema CheemSmart.
  */
 public class Ingles implements Idioma{
+
+    private LinkedList<Departamento> probabilidadesDepartamentos;
+
+    public Ingles(){
+        asignaProbabilidadesDescuentos();
+    }
 
     /**
      * Saluda al usuario en el idioma actual.
@@ -76,7 +88,14 @@ public class Ingles implements Idioma{
 
     @Override
     public void asignaProbabilidadesDescuentos() {
-        // TODO Auto-generated method stub
+        probabilidadesDepartamentos.add(new Electrodomesticos());
+        probabilidadesDepartamentos.add(new Electronicos());
+        probabilidadesDepartamentos.add(new Alimentos());
+        probabilidadesDepartamentos.add(new Electronicos());
         
+    }
+
+    public LinkedList<Departamento> getProbabilidades(){
+        return this.probabilidadesDepartamentos;
     }
 }

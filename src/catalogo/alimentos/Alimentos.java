@@ -40,4 +40,10 @@ public class Alimentos implements Departamento {
         return alimentos.iterator();
     }
 
+    public void aplicarDescuentoDepartamento(double d){
+        Iterator<Producto> i = alimentos.iterator();
+        while(i.hasNext())
+            i.next().aplicarDescuento(d);
+    }
+
 }

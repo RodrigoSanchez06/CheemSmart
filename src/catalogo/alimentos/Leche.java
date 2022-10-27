@@ -8,6 +8,8 @@ import catalogo.Producto;
  */
 public class Leche implements Producto {
 
+    private double descuento=0;
+
     /**
      * regresa el nombre del producto.
      * 
@@ -44,8 +46,18 @@ public class Leche implements Producto {
      * @return codigo de barras del producto.
      */
     @Override
-    public double codigoBarras() {
-        return 002;
+    public String codigoBarras() {
+        return "002";
+    }
+
+    public void aplicarDescuento(double d){
+        if(d < 0 || d >= 1)
+            throw new IllegalArgumentException();
+        this.descuento = (1-d);
+    }
+
+    public double getMultiplicadorDescuento(){
+        return this.descuento;
     }
 
 }

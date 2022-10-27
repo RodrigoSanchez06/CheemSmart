@@ -40,4 +40,9 @@ public class Electrodomesticos implements Departamento {
         return electroDom.iterator();
     }
 
+    public void aplicarDescuentoDepartamento(double d){
+        Iterator<Producto> i = electroDom.iterator();
+        while(i.hasNext())
+            i.next().aplicarDescuento(d);
+    }
 }

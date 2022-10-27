@@ -14,6 +14,10 @@ public class EspanniolEsp implements Idioma{
 
     private LinkedList<Departamento> probabilidadesDepartamentos;
 
+    public EspanniolEsp(){
+        asignaProbabilidadesDescuentos();
+    }
+
     /**
      * Saluda al usuario en el idioma actual.
      */
@@ -98,5 +102,7 @@ public class EspanniolEsp implements Idioma{
         probabilidadesDepartamentos.add(new Electronicos());
     }
  
-
+    public LinkedList<Departamento> getProbabilidades(){
+        return this.probabilidadesDepartamentos;
+    }
 }
