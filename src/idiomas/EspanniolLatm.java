@@ -12,7 +12,7 @@ import catalogo.electronicos.Electronicos;
  */
 public class EspanniolLatm implements Idioma{
 
-    private LinkedList<Departamento> probabilidadesDepartamentos;
+    private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
     public EspanniolLatm(){
         asignaProbabilidadesDescuentos();
@@ -79,6 +79,14 @@ public class EspanniolLatm implements Idioma{
         System.out.println("Opcion inválida intente de nuevo por favor."); 
     }
 
+     /**
+     * Hace saber al usuario que la opción no existe.
+     */
+    @Override
+    public void opcionInexistente() {
+        System.out.println("Lo siento esta opción no existe.");
+    }
+
     /**
      * Obtiene el nombre de la región.
      * @return nombre de la reguión
@@ -103,4 +111,6 @@ public class EspanniolLatm implements Idioma{
     public LinkedList<Departamento> getProbabilidades(){
         return this.probabilidadesDepartamentos;
     }
+
+   
 }

@@ -47,6 +47,11 @@ public interface Idioma {
     public void opcionIncorrecta();
 
     /**
+     * Hace saber al usuario que la opción no existe.
+     */
+    public void opcionInexistente();
+
+    /**
      * Obtiene el nombre de la región.
      * @return nombre de la reguión
      */
