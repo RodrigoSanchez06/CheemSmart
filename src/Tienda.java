@@ -13,7 +13,6 @@ import idiomas.Ingles;
  * dentro de la tienda.
  */
 public class Tienda {
-
     private  Idioma idioma;
     LinkedList<Cliente> listaClientes = agregaClientes();
     LinkedList<Producto> carritoDeCompra = new LinkedList<>();

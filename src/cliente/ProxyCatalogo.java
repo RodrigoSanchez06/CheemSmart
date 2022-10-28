@@ -1,9 +1,17 @@
 package cliente;
 
-public class ProxyCatalogo implements ICatalogo{
-    private Catalogo catalogo;
+import java.util.Iterator;
 
-    public void opciones(){
-        
+import catalogo.Departamento;
+
+public class ProxyCatalogo implements ICatalogo{
+    private Catalogo catalogo = new Catalogo();
+
+    public void imprimirCatalogo(){
+        this.catalogo.imprimirCatalogo();
+    }
+
+    public Iterator<Departamento> iteradorDepartamentos(){
+        return this.catalogo.iteradorDepartamentos();
     }
 }
