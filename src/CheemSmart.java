@@ -37,7 +37,32 @@ public class CheemSmart{
         }
         cambioIdioma(clienteActual.getPaisDeOrigen());
         idioma.saludo();
-        idioma.opciones();
+        int opcionUsuario;
+        while (true) {
+            try {
+                idioma.opciones();
+                String entradaUsuario = entrada.nextLine();
+                opcionUsuario = Integer.parseInt(entradaUsuario);
+                if (opcionUsuario >= 1 && opcionUsuario <= 3) break;
+                idioma.opcionInexistente();;
+            } catch (NumberFormatException e) {
+                idioma.opcionIncorrecta();
+            }   
+        }
+
+        switch (opcionUsuario) {
+            case 1:
+                //
+                break;
+            case 2:
+
+                break;
+            case 3:
+                idioma.despedida();
+                break;
+            default:
+                throw new IllegalStateException("ISE No existen mas opciones");
+        }
     }
 
     private static void cambioIdioma(Idioma idiomaActual){
@@ -62,7 +87,6 @@ public class CheemSmart{
         Cliente clienteTres = new Cliente("Fred12", "fr3di_21", "Frederick Town",
             7853255, "Texas 5th AV.", null, ing, ++id);
         clienteDos.setCuentaAsociada(crearAsociarCuenta(125, 0001, clienteTres, 31922257));
-
         listaClientes.add(clienteUno);
         listaClientes.add(clienteDos);
         listaClientes.add(clienteTres);

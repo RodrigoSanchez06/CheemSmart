@@ -12,7 +12,7 @@ import catalogo.electronicos.Electronicos;
  */
 public class EspanniolEsp implements Idioma{
 
-    private LinkedList<Departamento> probabilidadesDepartamentos;
+    private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
     public EspanniolEsp(){
         asignaProbabilidadesDescuentos();
@@ -79,6 +79,14 @@ public class EspanniolEsp implements Idioma{
     @Override
     public void opcionIncorrecta() {
         System.out.println("Vaya, te has equivocado de opción tío :(.");      
+    }
+
+    /**
+     * Hace saber al usuario que la opción no existe.
+     */
+    @Override
+    public void opcionInexistente() {
+        System.out.println("Madre mia wilirex esa opción es inexistente.");   
     }
 
     /**

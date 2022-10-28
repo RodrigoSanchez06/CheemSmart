@@ -11,7 +11,7 @@ import catalogo.Departamento;
  */
 public class Ingles implements Idioma{
 
-    private LinkedList<Departamento> probabilidadesDepartamentos;
+    private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
     public Ingles(){
         asignaProbabilidadesDescuentos();
@@ -77,6 +77,15 @@ public class Ingles implements Idioma{
         System.out.println("Incorrect option, try again!");
     }
 
+        
+    /**
+     * Hace saber al usuario que la opción no existe.
+     */
+    @Override
+    public void opcionInexistente() {
+        System.out.println("Sorry, this option does not exist");
+    }
+
     /**
      * Obtiene el nombre de la región.
      * @return nombre de la reguión
@@ -89,8 +98,8 @@ public class Ingles implements Idioma{
     @Override
     public void asignaProbabilidadesDescuentos() {
         probabilidadesDepartamentos.add(new Electrodomesticos());
-        probabilidadesDepartamentos.add(new Electronicos());
         probabilidadesDepartamentos.add(new Alimentos());
+        probabilidadesDepartamentos.add(new Electronicos());
         probabilidadesDepartamentos.add(new Electronicos());
         
     }
