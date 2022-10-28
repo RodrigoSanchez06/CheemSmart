@@ -31,7 +31,7 @@ public class Cuenta implements Icuenta{
      */
     @Override
     public void comprar(int factura, int noCuenta, int nip) {
-        if (logIn(noCuenta, nip)) {
+        if (ingresar(noCuenta, nip)) {
             fondos = fondos - factura;
             consultarFondos();   
         } else {
@@ -53,7 +53,7 @@ public class Cuenta implements Icuenta{
      * @param nip
      * @return true en caso de que conincidan, false en otro caso.
      */
-    public boolean logIn(int noCuenta, int nip){
+    public boolean ingresar(int noCuenta, int nip){
         if (noCuenta == this.noCuenta && nip == this.nip) {
             return true;
         }

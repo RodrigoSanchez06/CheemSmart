@@ -16,6 +16,6 @@ public class Tienda {
         probabilidadesDepartamentos.add(alimentos);
         probabilidadesDepartamentos.add(alimentos);
         probabilidadesDepartamentos.add(electronicos);
-        System.out.println("qpd si jalo xd");
+        System.out.println("qpd si jalo xd"); //Ese bastardo
     }
 }
