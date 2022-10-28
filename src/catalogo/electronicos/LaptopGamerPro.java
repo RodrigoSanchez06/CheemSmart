@@ -50,12 +50,22 @@ public class LaptopGamerPro implements Producto {
         return "200";
     }
 
+    /**
+     * Aplica el descuento al producto.
+     * @param d porcentaje de descuento
+     */
+    @Override
     public void aplicarDescuento(double d){
         if(d < 0 || d >= 1)
             throw new IllegalArgumentException();
         this.descuento = (1-d);
     }
 
+    /**
+     * Regresa el descuento del producto.
+     * @return descuento del producto.
+     */
+    @Override
     public double getMultiplicadorDescuento(){
         return this.descuento;
     }

@@ -2,6 +2,10 @@ package catalogo;
 
 import java.util.Iterator;
 
+/**
+ * Interfaz que define el comportamiento de los distintos departamentos en
+ * CheemSmart.
+ */
 public interface Departamento {
 
     /**
@@ -19,5 +23,8 @@ public interface Departamento {
      */
     Iterator<Producto> obtenerIterador();
 
+    /**
+     * Aplica el descuento a todos los prouctos del departamento.
+     */
     void aplicarDescuentoDepartamento(double d);
 }

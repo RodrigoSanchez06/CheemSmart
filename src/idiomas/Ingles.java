@@ -95,6 +95,10 @@ public class Ingles implements Idioma{
         return "EUA";
     }
 
+    /**
+     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre 
+     * departamentos de adquirir un desciento dependiendo la región,
+     */
     @Override
     public void asignaProbabilidadesDescuentos() {
         probabilidadesDepartamentos.add(new Electrodomesticos());
@@ -104,6 +108,12 @@ public class Ingles implements Idioma{
         
     }
 
+    /**
+     * Devuelve las probabilidades de que el departamento consiga descuento o no
+     * @return lista de departamentos, cada una representa un elemento en el espacio 
+     * muestral de obtener probabilidad mayor o menor.
+     */
+    @Override
     public LinkedList<Departamento> getProbabilidades(){
         return this.probabilidadesDepartamentos;
     }
