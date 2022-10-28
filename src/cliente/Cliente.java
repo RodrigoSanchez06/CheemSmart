@@ -102,14 +102,6 @@ public class Cliente {
     }
 
     /**
-     * Devuelve la cuenta bancaria asociada del cliente.
-     * @return cuenta bancaria asociada del cliente.
-     */
-    public Cuenta getCuentaAsociada(){
-        return this.cuentaAsociada;
-    }
-
-    /**
      * Devuelve el Identificador único del CLiente
      * @return identificador único del cliente
      */

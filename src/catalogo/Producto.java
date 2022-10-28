@@ -29,7 +29,15 @@ public interface Producto {
      */
     String codigoBarras();
 
+    /**
+     * Aplica el descuento al producto.
+     * @param d porcentaje de descuento
+     */
     void aplicarDescuento(double d);
 
+    /**
+     * Regresa el descuento del producto.
+     * @return descuento del producto.
+     */
     double getMultiplicadorDescuento();
 }
