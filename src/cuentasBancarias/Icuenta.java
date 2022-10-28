@@ -5,9 +5,9 @@ package cuentasBancarias;
  */
 public interface Icuenta{
 
-    /**
+   /**
      * método que resta los fondos de la cuenta tras realizar una compra.
-     */
+     */ 
     public void comprar(int factura, int noCuenta, int nip);
 
     /**

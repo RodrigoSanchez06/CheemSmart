@@ -6,6 +6,10 @@ import java.util.Iterator;
 import catalogo.Departamento;
 import catalogo.Producto;
 
+
+/**
+ *  Clase que representa al departamento de Electrodomesticos de CheemSmart.
+ */
 public class Electrodomesticos implements Departamento {
 
     private String nombreDepartamento = "Electrodomesticos";
@@ -26,6 +30,7 @@ public class Electrodomesticos implements Departamento {
      * 
      * @return Devuelve un String con el titulo del departamento
      */
+    @Override
     public String obtenerDepartamento() {
         return this.nombreDepartamento;
     }
@@ -36,10 +41,15 @@ public class Electrodomesticos implements Departamento {
      * 
      * @return Devuelve un iterador del departamento en cuestion
      */
+    @Override
     public Iterator<Producto> obtenerIterador() {
         return electroDom.iterator();
     }
 
+    /**
+     * Aplica el descuento a todos los prouctos del departamento.
+     */
+    @Override
     public void aplicarDescuentoDepartamento(double d){
         Iterator<Producto> i = electroDom.iterator();
         while(i.hasNext())
