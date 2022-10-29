@@ -8,11 +8,11 @@ import cliente.ICatalogo;
 /**
  * Clase que Representa al idioma español (LATAM) del sistema CheemSmart.
  */
-public class EspanniolLatm implements Idioma{
+public class EspanniolLatm implements Idioma {
 
     private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
-    public EspanniolLatm(ICatalogo c){
+    public EspanniolLatm(ICatalogo c) {
         asignaProbabilidadesDescuentos(c);
     }
 
@@ -20,7 +20,7 @@ public class EspanniolLatm implements Idioma{
      * Saluda al usuario en el idioma actual.
      */
     @Override
-    public void saludo(){
+    public void saludo() {
         System.out.println("Bienvenido a la tienda de CheemSmart.");
     }
 
@@ -37,8 +37,10 @@ public class EspanniolLatm implements Idioma{
      * en el idioma actual.
      */
     @Override
-    public void descuentoPropaganda(boolean existePropaganda) {
-        System.out.println("estas son las ofertas del día de hoy: ");
+    public void descuentoPropaganda(Departamento departamentoDescuento, Double porcentajeDescuento) {
+        System.out.println("Estas son las ofertas que tenemos para ti: ");
+        System.out.println(porcentajeDescuento + "%" + "Descuento en el departamento de: "
+                + departamentoDescuento.obtenerDepartamento());
     }
 
     /**
@@ -66,7 +68,7 @@ public class EspanniolLatm implements Idioma{
     @Override
     public void datosIncorrectos() {
         System.out.println("Lo sentimos, el numero de cuenta o el pin es incorrecto");
-        
+
     }
 
     /**
@@ -74,10 +76,10 @@ public class EspanniolLatm implements Idioma{
      */
     @Override
     public void opcionIncorrecta() {
-        System.out.println("Opcion inválida intente de nuevo por favor."); 
+        System.out.println("Opcion inválida intente de nuevo por favor.");
     }
 
-     /**
+    /**
      * Hace saber al usuario que la opción no existe.
      */
     @Override
@@ -87,6 +89,7 @@ public class EspanniolLatm implements Idioma{
 
     /**
      * Obtiene el nombre de la región.
+     * 
      * @return nombre de la reguión
      */
     @Override
@@ -95,28 +98,29 @@ public class EspanniolLatm implements Idioma{
     }
 
     /**
-     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre 
+     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */
     @Override
     public void asignaProbabilidadesDescuentos(ICatalogo c) {
         Iterator<Departamento> i = c.iteradorDepartamentos();
-        while(i.hasNext()){
+        while (i.hasNext()) {
             Departamento d = i.next();
             probabilidadesDepartamentos.add(d);
-            if(d.obtenerDepartamento().equals("Alimentos"));
-                probabilidadesDepartamentos.add(d);
+            if (d.obtenerDepartamento().equals("Alimentos"))
+                ;
+            probabilidadesDepartamentos.add(d);
         }
     }
 
     /**
      * Devuelve las probabilidades de que el departamento consiga descuento o no
-     * @return lista de departamentos, cada una representa un elemento en el espacio 
-     * muestral de obtener probabilidad mayor o menor.
+     * 
+     * @return lista de departamentos, cada una representa un elemento en el espacio
+     *         muestral de obtener probabilidad mayor o menor.
      */
-    public LinkedList<Departamento> getProbabilidades(){
+    public LinkedList<Departamento> getProbabilidades() {
         return this.probabilidadesDepartamentos;
     }
 
-   
 }

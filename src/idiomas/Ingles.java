@@ -8,11 +8,11 @@ import catalogo.Departamento;
 /**
  * Clase que Representa al idioma Inglés del sistema CheemSmart.
  */
-public class Ingles implements Idioma{
+public class Ingles implements Idioma {
 
     private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
-    public Ingles(ICatalogo c){
+    public Ingles(ICatalogo c) {
         asignaProbabilidadesDescuentos(c);
     }
 
@@ -37,8 +37,10 @@ public class Ingles implements Idioma{
      * en el idioma actual.
      */
     @Override
-    public void descuentoPropaganda(boolean existePropaganda) {
+    public void descuentoPropaganda(Departamento departamentoDescuento, Double porcentajeDescuento) {
         System.out.println("today's deals");
+        System.out.println(porcentajeDescuento + "%" + "discount on "
+                + departamentoDescuento.obtenerDepartamento());
     }
 
     /**
@@ -47,9 +49,9 @@ public class Ingles implements Idioma{
     @Override
     public void opciones() {
         System.out.println("Choose one of the following options: "
-        + "\n 1. Read catalogue"
-        + "\n 2. Purchase"
-        + "\n 3. Exit");
+                + "\n 1. Read catalogue"
+                + "\n 2. Purchase"
+                + "\n 3. Exit");
     }
 
     /**
@@ -76,7 +78,6 @@ public class Ingles implements Idioma{
         System.out.println("Incorrect option, try again!");
     }
 
-        
     /**
      * Hace saber al usuario que la opción no existe.
      */
@@ -87,6 +88,7 @@ public class Ingles implements Idioma{
 
     /**
      * Obtiene el nombre de la región.
+     * 
      * @return nombre de la reguión
      */
     @Override
@@ -95,27 +97,29 @@ public class Ingles implements Idioma{
     }
 
     /**
-     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre 
+     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */
     @Override
     public void asignaProbabilidadesDescuentos(ICatalogo c) {
         Iterator<Departamento> i = c.iteradorDepartamentos();
-        while(i.hasNext()){
+        while (i.hasNext()) {
             Departamento d = i.next();
             probabilidadesDepartamentos.add(d);
-            if(d.obtenerDepartamento().equals("Electronicos"));
-                probabilidadesDepartamentos.add(d);
+            if (d.obtenerDepartamento().equals("Electronicos"))
+                ;
+            probabilidadesDepartamentos.add(d);
         }
     }
 
     /**
      * Devuelve las probabilidades de que el departamento consiga descuento o no
-     * @return lista de departamentos, cada una representa un elemento en el espacio 
-     * muestral de obtener probabilidad mayor o menor.
+     * 
+     * @return lista de departamentos, cada una representa un elemento en el espacio
+     *         muestral de obtener probabilidad mayor o menor.
      */
     @Override
-    public LinkedList<Departamento> getProbabilidades(){
+    public LinkedList<Departamento> getProbabilidades() {
         return this.probabilidadesDepartamentos;
     }
 }
