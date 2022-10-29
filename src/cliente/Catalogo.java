@@ -53,4 +53,15 @@ public class Catalogo implements ICatalogo{
         return this.departamentos;
     }
 
+    public void descuento(Departamento d){
+        if(d.obtenerDescuento() == 0)
+            throw new IllegalStateException();
+        if(d.getClass() == (new Alimentos()).getClass())
+            departamentoAlimentos = d;
+        else if(d.getClass() == (new Electronicos()).getClass())
+            departamentoElectronicos = d;
+        else if(d.getClass() == (new Electrodomesticos()).getClass())
+            departamentoElectrodomesticos = d;
+    }
+
 }

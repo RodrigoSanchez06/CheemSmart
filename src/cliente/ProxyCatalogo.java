@@ -14,4 +14,8 @@ public class ProxyCatalogo implements ICatalogo{
     public Iterator<Departamento> iteradorDepartamentos(){
         return this.catalogo.iteradorDepartamentos();
     }
+
+    public void descuento(Departamento d){
+        catalogo.descuento(d);
+    }
 }
