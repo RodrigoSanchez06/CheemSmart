@@ -1,9 +1,8 @@
 package idiomas;
 
-import catalogo.electronicos.Electronicos;
-import catalogo.electrodomesticos.Electrodomesticos;
-import catalogo.alimentos.Alimentos;
+import cliente.ICatalogo;
 import java.util.LinkedList;
+import java.util.Iterator;
 import catalogo.Departamento;
 
 /**
@@ -13,8 +12,8 @@ public class Ingles implements Idioma{
 
     private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
-    public Ingles(){
-        asignaProbabilidadesDescuentos();
+    public Ingles(ICatalogo c){
+        asignaProbabilidadesDescuentos(c);
     }
 
     /**
@@ -100,12 +99,14 @@ public class Ingles implements Idioma{
      * departamentos de adquirir un desciento dependiendo la región,
      */
     @Override
-    public void asignaProbabilidadesDescuentos() {
-        probabilidadesDepartamentos.add(new Electrodomesticos());
-        probabilidadesDepartamentos.add(new Alimentos());
-        probabilidadesDepartamentos.add(new Electronicos());
-        probabilidadesDepartamentos.add(new Electronicos());
-        
+    public void asignaProbabilidadesDescuentos(ICatalogo c) {
+        Iterator<Departamento> i = c.iteradorDepartamentos();
+        while(i.hasNext()){
+            Departamento d = i.next();
+            probabilidadesDepartamentos.add(d);
+            if(d.obtenerDepartamento().equals("Electronicos"));
+                probabilidadesDepartamentos.add(d);
+        }
     }
 
     /**
