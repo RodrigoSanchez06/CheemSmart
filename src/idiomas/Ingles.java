@@ -12,13 +12,8 @@ public class Ingles implements Idioma {
 
     private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
-<<<<<<< HEAD
-    public Ingles() {
-        asignaProbabilidadesDescuentos();
-=======
-    public Ingles(ICatalogo c){
+    public Ingles(ICatalogo c) {
         asignaProbabilidadesDescuentos(c);
->>>>>>> 46d260b818ba75bda0f163e355d4f076b39f2d8b
     }
 
     /**
@@ -106,23 +101,15 @@ public class Ingles implements Idioma {
      * departamentos de adquirir un desciento dependiendo la región,
      */
     @Override
-<<<<<<< HEAD
-    public void asignaProbabilidadesDescuentos() {
-        probabilidadesDepartamentos.add(new Electrodomesticos());
-        probabilidadesDepartamentos.add(new Alimentos());
-        probabilidadesDepartamentos.add(new Electronicos());
-        probabilidadesDepartamentos.add(new Electronicos());
-
-=======
     public void asignaProbabilidadesDescuentos(ICatalogo c) {
         Iterator<Departamento> i = c.iteradorDepartamentos();
-        while(i.hasNext()){
+        while (i.hasNext()) {
             Departamento d = i.next();
             probabilidadesDepartamentos.add(d);
-            if(d.obtenerDepartamento().equals("Electronicos"));
-                probabilidadesDepartamentos.add(d);
+            if (d.obtenerDepartamento().equals("Electronicos"))
+                ;
+            probabilidadesDepartamentos.add(d);
         }
->>>>>>> 46d260b818ba75bda0f163e355d4f076b39f2d8b
     }
 
     /**

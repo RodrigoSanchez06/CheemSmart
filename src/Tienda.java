@@ -35,7 +35,7 @@ public class Tienda {
     /**
      * Se realiza una compra en el sistema.
      */
-    public void hacerCompra() {
+    public String hacerCompra() {
         // Aqui se empiezan a mostrar los productos
         boolean compraFinalizada = false;
         boolean salir = false;
@@ -43,21 +43,32 @@ public class Tienda {
         while (!compraFinalizada || !salir) {
 
         }
+
+        return imprimeTicket(carritoDeCompra);
     }
 
     /**
      * Imprime el ticket de la compra del cliente.
      */
+
     private void imprimeTicket() {
         System.out.println("Imprimiendo Ticket...\n"
                 + "********** CheemSmart *********");
+    }
+
+    private String imprimeTicket(LinkedList<Producto> carrito) {
+        String ticket;
+        ticket = "Imprimiendo Ticket...\n"
+                + "********** CheemSmart *********";
         for (Producto p : carritoDeCompra) {
             // OJO AQUI FALTA
         }
-        System.out.println("TOTAL: ");
-        System.out.println("******************************");
+        ticket += "\nTOTAL: ";
+        ticket += "\n******************************";
 
-        System.out.println("Su entrega está programada para el día: 12/nov/2022");
+        ticket += "\nSu entrega está programada para el día: 12/nov/2022";
+
+        return ticket;
     }
 
     /**
@@ -80,9 +91,9 @@ public class Tienda {
      */
     private LinkedList<Cliente> agregaClientes() {
         LinkedList<Cliente> listaClientes = new LinkedList<Cliente>();
-        EspanniolLatm latm = new EspanniolLatm();
-        EspanniolEsp esp = new EspanniolEsp();
-        Ingles ing = new Ingles();
+        EspanniolLatm latm = new EspanniolLatm(catalogo);
+        EspanniolEsp esp = new EspanniolEsp(catalogo);
+        Ingles ing = new Ingles(catalogo);
         int id = 0;
 
         Cliente clienteUno = new Cliente("JuanitoPro777", "juan1234", "Juan Perez",

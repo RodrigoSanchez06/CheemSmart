@@ -75,6 +75,7 @@ public class CheemSmart {
                                     break;
                                 case 2:
                                     tienda.hacerCompra();
+                                    System.out.println(tienda.hacerCompra());
                                     break;
                                 case 3:
                                     tienda.getIdioma().despedida();

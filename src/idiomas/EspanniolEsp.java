@@ -12,13 +12,8 @@ public class EspanniolEsp implements Idioma {
 
     private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
-<<<<<<< HEAD
-    public EspanniolEsp() {
-        asignaProbabilidadesDescuentos();
-=======
-    public EspanniolEsp(ICatalogo c){
+    public EspanniolEsp(ICatalogo c) {
         asignaProbabilidadesDescuentos(c);
->>>>>>> 46d260b818ba75bda0f163e355d4f076b39f2d8b
     }
 
     /**
@@ -109,11 +104,12 @@ public class EspanniolEsp implements Idioma {
     @Override
     public void asignaProbabilidadesDescuentos(ICatalogo c) {
         Iterator<Departamento> i = c.iteradorDepartamentos();
-        while(i.hasNext()){
+        while (i.hasNext()) {
             Departamento d = i.next();
             probabilidadesDepartamentos.add(d);
-            if(d.obtenerDepartamento().equals("Electrodomesticos"));
-                probabilidadesDepartamentos.add(d);
+            if (d.obtenerDepartamento().equals("Electrodomesticos"))
+                ;
+            probabilidadesDepartamentos.add(d);
         }
     }
 
