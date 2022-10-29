@@ -27,7 +27,7 @@ public class Chocokrispis implements Producto {
      */
     @Override
     public double precio() {
-        return 36.90*this.descuento;
+        return (36.90*this.descuento);
     }
 
     /**

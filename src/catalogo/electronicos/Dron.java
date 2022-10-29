@@ -27,7 +27,7 @@ public class Dron implements Producto {
      */
     @Override
     public double precio() {
-        return 3250.85*this.descuento;
+        return (3250.85*this.descuento);
     }
 
     /**

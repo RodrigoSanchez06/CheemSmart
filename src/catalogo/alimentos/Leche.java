@@ -27,7 +27,7 @@ public class Leche implements Producto {
      */
     @Override
     public double precio() {
-        return 26.80*this.descuento;
+        return (26.80*this.descuento);
     }
 
     /**

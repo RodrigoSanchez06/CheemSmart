@@ -27,7 +27,7 @@ public class LaptopGamerPro implements Producto {
      */
     @Override
     public double precio() {
-        return 18700.99*this.descuento;
+        return (18700.99*this.descuento);
     }
 
     /**

@@ -27,7 +27,7 @@ public class Licuadora implements Producto {
      */
     @Override
     public double precio() {
-        return 895.99*this.descuento;
+        return (895.99*this.descuento);
     }
 
     /**

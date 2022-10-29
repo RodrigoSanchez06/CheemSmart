@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import catalogo.Departamento;
 import cliente.Cliente;
+import java.util.Iterator;
 
 public class CheemSmart {
 
@@ -61,7 +62,7 @@ public class CheemSmart {
                 tienda.getIdioma().saludo();
                 Departamento d = tienda.getIdioma().asignaProbabilidadesDescuentos();
                 tienda.getCatalogo().descuento(d);
-                tienda.getCatalogo().imprimirCatalogo();
+                Iterator<Departamento> i = tienda.getCatalogo().iteradorDepartamentos();
                 tienda.getIdioma().descuentoPropaganda(d, (double) d.obtenerDescuento());// Muestra descuentos
                 int opcionUsuario;
                 boolean cerrarSesion = false;
