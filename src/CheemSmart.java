@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 
+import catalogo.Departamento;
 import cliente.Cliente;
 
 public class CheemSmart {
@@ -58,8 +59,9 @@ public class CheemSmart {
 
                 tienda.cambioIdioma(clienteActual.getPaisDeOrigen()); // Cambia el idioma al del cliente.
                 tienda.getIdioma().saludo();
-                tienda.getIdioma().asignaProbabilidadesDescuentos();
-                tienda.getIdioma().descuentoPropaganda(null, null);
+                Departamento descuentoDsto = tienda.getIdioma().asignaProbabilidadesDescuentos();
+                Double porcentajeDescuento = descuentoDsto.obtenerDescuento();
+                tienda.getIdioma().descuentoPropaganda(descuentoDsto, porcentajeDescuento);
                 int opcionUsuario;
 
                 while (true) { // Valida las opciones del usuario.

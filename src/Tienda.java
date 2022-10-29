@@ -1,6 +1,8 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import catalogo.Departamento;
 import catalogo.Producto;
 import cliente.Cliente;
 import cliente.ICatalogo;
@@ -40,24 +42,44 @@ public class Tienda {
         // Aqui se empiezan a mostrar los productos
         boolean compraFinalizada = false;
         boolean salir = false;
+        double total = 0;
 
         while (!compraFinalizada || !salir) {
             System.out.println("Introduce el numero de barras del producto.");
             String numeroBarras = entrada.nextLine();
+            Iterator<Departamento> itDep = catalogo.iteradorDepartamentos();
+            boolean encontrado = false;
+            while (itDep.hasNext()) {
+                Iterator<Producto> itPro = itDep.next().obtenerIterador();
+                while (itPro.hasNext()) {
+                    Producto temporal = itPro.next();
+                    if (numeroBarras.equals(temporal.codigoBarras())) {
+                        carritoDeCompra.add(temporal);
+                        encontrado = true;
+                    }
+                }
+            }
+            if (encontrado) {
+                System.out.println("Producto añadido al carrito de compras.");
+            } else {
+                System.out.println("Código de barras incorrecto, intentalo de");
+            }
         }
 
-        return imprimeTicket(carritoDeCompra);
+        return imprimeTicket(carritoDeCompra, total);
     }
 
     /**
      * Imprime el ticket de la compra del cliente.
      */
-    private String imprimeTicket(LinkedList<Producto> carrito) {
+    private String imprimeTicket(LinkedList<Producto> carrito, double Total) {
         String ticket;
         ticket = "Imprimiendo Ticket...\n"
                 + "********** CheemSmart *********";
         for (Producto p : carritoDeCompra) {
-            // OJO AQUI FALTA
+            System.out.println(p.nombre() + "\n"
+                    + "Precio : " + p.precio() + "\n"
+                    + "Codigo de barras: " + p.codigoBarras() + "\n");
         }
         ticket += "\nTOTAL: ";
         ticket += "\n******************************";
@@ -92,7 +114,7 @@ public class Tienda {
         EspanniolLatm latm = new EspanniolLatm();
         int id = 0;
 
-        Cliente clienteUno = new Cliente("JuanitoPro777", "juan1234", "Juan Perez",
+        Cliente clienteUno = new Cliente("0", "0", "Juan Perez",
                 552509051, "Nativitas CDMX", null, latm, id);
         clienteUno.setCuentaAsociada(crearAsociarCuenta(20000, 1234, clienteUno, 22060325));
 
