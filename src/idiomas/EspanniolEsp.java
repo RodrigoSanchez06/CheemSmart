@@ -62,8 +62,7 @@ public class EspanniolEsp implements Idioma {
      */
     @Override
     public void compraCompletada() {
-        System.out.println("Su compra ha sido completadada con éxito" +
-                " en un momento le imprimermos su recibo.");
+        System.out.println("Su compra ha sido completadada con éxito");
     }
 
     /**

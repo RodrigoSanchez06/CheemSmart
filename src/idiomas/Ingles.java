@@ -62,7 +62,7 @@ public class Ingles implements Idioma {
      */
     @Override
     public void compraCompletada() {
-        System.out.println("Thank you so much, your ticket will be printed soon");
+        System.out.println("Thank you so much");
     }
 
     /**

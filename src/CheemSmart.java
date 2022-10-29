@@ -61,7 +61,9 @@ public class CheemSmart {
                 tienda.asignarClienteActual(clienteActual);
 
                 tienda.cambioIdioma(clienteActual.getPaisDeOrigen()); // Cambia el idioma al del cliente.
+                System.out.println("");
                 tienda.getIdioma().saludo();
+                System.out.println("");
                 Departamento d = tienda.getIdioma().asignaProbabilidadesDescuentos();
                 tienda.getCatalogo().descuento(d);
                 Iterator<Departamento> i = tienda.getCatalogo().iteradorDepartamentos();
@@ -70,6 +72,7 @@ public class CheemSmart {
                 boolean cerrarSesion = false;
                 while (!cerrarSesion) { // Valida las opciones del usuario.
                     try {
+                        System.out.println("");
                         tienda.getIdioma().opciones();
                         String entradaUsuario = entrada.nextLine();
                         opcionUsuario = Integer.parseInt(entradaUsuario);

@@ -86,6 +86,8 @@ public class Tienda {
                             if (clienteActual.getCuentaAsociada().obtenerNoCuenta() == numeroCuenta
                                     && clienteActual.getCuentaAsociada().obtenerNip() == nip) {
                                 clienteActual.getCuentaAsociada().comprar(total, numeroCuenta, nip, idioma);
+                            } else {
+                                idioma.datosIncorrectos();
                             }
                         } catch (NumberFormatException nbe) {
                             idioma.datosIncorrectos();
@@ -152,7 +154,7 @@ public class Tienda {
         EspanniolLatm latm = new EspanniolLatm();
         int id = 0;
 
-        Cliente clienteUno = new Cliente("oscar", "oscar123", "Juan Perez",
+        Cliente clienteUno = new Cliente("juanpro222", "juancho", "Juan Perez",
                 552509051, "Nativitas CDMX", null, latm, id);
         clienteUno.setCuentaAsociada(crearAsociarCuenta(20000, 1234, clienteUno, 22060325));
 
