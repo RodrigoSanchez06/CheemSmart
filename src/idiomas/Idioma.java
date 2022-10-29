@@ -59,6 +59,27 @@ public interface Idioma {
     public String getRegion();
 
     /**
+     * Avisa al usuario para que introduzca un número de barras
+     * 
+     * @return aviso a usuario de introducir código de barras
+     */
+    public String introduceNumBarras();
+
+    /**
+     * Avisa al usuario que el producto ha sido añadido con exito.
+     * 
+     * @return aviso al usuario que el producto se añadió con éxito.
+     */
+    public String productoAnniadido();
+
+    /**
+     * Avisa al usuario que el código de barras que introdujo es incorrecto.
+     * 
+     * @return aviso codigo de barras incorrecto.
+     */
+    public String codigoBarrasIncorrecto();
+
+    /**
      * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */

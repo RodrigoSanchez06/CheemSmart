@@ -126,4 +126,34 @@ public class EspanniolEsp implements Idioma {
     public LinkedList<Departamento> getProbabilidades() {
         return this.probabilidadesDepartamentos;
     }
+
+    /**
+     * Avisa al usuario para que introduzca un número de barras
+     * 
+     * @return aviso a usuario de introducir código de barras
+     */
+    @Override
+    public String introduceNumBarras() {
+        return "digita el codigo de barras chaval.";
+    }
+
+    /**
+     * Avisa al usuario que el producto ha sido añadido con exito.
+     * 
+     * @return aviso al usuario que el producto se añadió con éxito.
+     */
+    @Override
+    public String productoAnniadido() {
+        return "El producto ha sido añadido al carrito de la compra";
+    }
+
+    /**
+     * Avisa al usuario que el código de barras que introdujo es incorrecto.
+     * 
+     * @return aviso codigo de barras incorrecto.
+     */
+    @Override
+    public String codigoBarrasIncorrecto() {
+        return "Ostia no he visto ese codigo de barras en mi vida, intentalo de nuevo!!!";
+    }
 }
