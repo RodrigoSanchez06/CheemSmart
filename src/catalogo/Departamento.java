@@ -27,4 +27,6 @@ public interface Departamento {
      * Aplica el descuento a todos los prouctos del departamento.
      */
     void aplicarDescuentoDepartamento(double d);
+
+    int obtenerDescuento();
 }

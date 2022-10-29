@@ -12,12 +12,14 @@ import catalogo.electronicos.Electronicos;
  */
 public class Catalogo implements ICatalogo{
 
-    Departamento departamentoAlimentos = new Alimentos();
-    Departamento departamentoElectronicos = new Electronicos();
-    Departamento departamentoElectrodomesticos = new Electrodomesticos();
+    private Departamento departamentoAlimentos = new Alimentos();
+    private Departamento departamentoElectronicos = new Electronicos();
+    private Departamento departamentoElectrodomesticos = new Electrodomesticos();
+    private Iterator<Departamento> departamentos;
 
-    Iterator<Departamento> departamentos;
-
+    /**
+     * Constructor por omision de un catalogo por defecto
+     */
     public Catalogo(){
         LinkedList<Departamento> sDepartamentos = new LinkedList<Departamento>();
         sDepartamentos.add(departamentoAlimentos);
@@ -26,6 +28,9 @@ public class Catalogo implements ICatalogo{
         this.departamentos = sDepartamentos.iterator();
     }
 
+    /**
+     * Método que imprime en pantalla los productos del catalago organizados por departamentos
+     */
     public void imprimirCatalogo(){
         Iterator<Departamento> i = this.iteradorDepartamentos();
         while(i.hasNext()){
@@ -41,6 +46,9 @@ public class Catalogo implements ICatalogo{
         }
     }
 
+    /**
+     * Metodo que devuelve un iterador que recorre los departamentos
+     */
     public Iterator<Departamento> iteradorDepartamentos(){
         return this.departamentos;
     }

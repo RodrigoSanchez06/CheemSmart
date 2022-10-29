@@ -62,7 +62,7 @@ public interface Idioma {
      * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */
-    public void asignaProbabilidadesDescuentos();
+    public Departamento asignaProbabilidadesDescuentos();
 
     /**
      * Devuelve las probabilidades de que el departamento consiga descuento o no

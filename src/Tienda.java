@@ -4,7 +4,6 @@ import catalogo.Producto;
 import cliente.Cliente;
 import cliente.ICatalogo;
 import cliente.ProxyCatalogo;
-import cuentasBancarias.Cuenta;
 import cuentasBancarias.Icuenta;
 import cuentasBancarias.ProxyCuenta;
 import idiomas.EspanniolEsp;

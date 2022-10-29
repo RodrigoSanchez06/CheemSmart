@@ -14,6 +14,7 @@ public class Electrodomesticos implements Departamento {
 
     private String nombreDepartamento = "Electrodomesticos";
     private ArrayList<Producto> electroDom = new ArrayList<Producto>();
+    private double descuento;
 
     /**
      * Costructor por omision que inicializa la lista con los 3 productos de
@@ -54,5 +55,10 @@ public class Electrodomesticos implements Departamento {
         Iterator<Producto> i = electroDom.iterator();
         while(i.hasNext())
             i.next().aplicarDescuento(d);
+        this.descuento = d;
+    }
+
+    public int obtenerDescuento(){
+        return (int) this.descuento*100;
     }
 }
