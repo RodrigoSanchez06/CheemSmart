@@ -13,6 +13,7 @@ public class Electronicos implements Departamento {
 
     private String nombreDepartamento = "Electronicos";
     private ArrayList<Producto> electro = new ArrayList<Producto>();
+    private double descuento;
 
     /**
      * Costructor por omision que inicializa la lista con los 3 productos de
@@ -53,6 +54,11 @@ public class Electronicos implements Departamento {
         Iterator<Producto> i = electro.iterator();
         while (i.hasNext())
             i.next().aplicarDescuento(d);
+        this.descuento = d;
+    }
+
+    public int obtenerDescuento(){
+        return (int) this.descuento*100;
     }
 
 }

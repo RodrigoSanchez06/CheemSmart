@@ -13,6 +13,7 @@ public class Alimentos implements Departamento {
 
     private String nombreDepartamento = "Alimentos";
     private ArrayList<Producto> alimentos = new ArrayList<Producto>();
+    private double descuento;
 
     /**
      * Constructor por omoision que inicializa la lista con 3 tipos de hamburguesas
@@ -53,6 +54,10 @@ public class Alimentos implements Departamento {
         Iterator<Producto> i = alimentos.iterator();
         while(i.hasNext())
             i.next().aplicarDescuento(d);
+        this.descuento=d;
     }
-
+    
+    public int obtenerDescuento(){
+        return (int) this.descuento*100;
+    }
 }

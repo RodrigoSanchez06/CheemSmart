@@ -1,6 +1,8 @@
 package idiomas;
 
 import java.util.LinkedList;
+import java.util.Random;
+
 import catalogo.Departamento;
 import catalogo.alimentos.Alimentos;
 import catalogo.electrodomesticos.Electrodomesticos;
@@ -102,11 +104,15 @@ public class Ingles implements Idioma {
      * departamentos de adquirir un desciento dependiendo la región,
      */
     @Override
-    public void asignaProbabilidadesDescuentos() {
+    public Departamento asignaProbabilidadesDescuentos() {
+        Random azar = new Random();
         probabilidadesDepartamentos.add(new Alimentos());
         probabilidadesDepartamentos.add(new Electronicos());
         probabilidadesDepartamentos.add(new Electronicos());
         probabilidadesDepartamentos.add(new Electrodomesticos());
+        Departamento d = probabilidadesDepartamentos.get(azar.nextInt(probabilidadesDepartamentos.size()));
+        d.aplicarDescuentoDepartamento((azar.nextInt(2)+1)/10);
+        return d;
     }
 
     /**

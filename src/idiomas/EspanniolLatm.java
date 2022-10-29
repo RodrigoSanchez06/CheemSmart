@@ -5,6 +5,7 @@ import catalogo.Departamento;
 import catalogo.alimentos.Alimentos;
 import catalogo.electrodomesticos.Electrodomesticos;
 import catalogo.electronicos.Electronicos;
+import java.util.Random;
 
 /**
  * Clase que Representa al idioma español (LATAM) del sistema CheemSmart.
@@ -103,11 +104,15 @@ public class EspanniolLatm implements Idioma {
      * departamentos de adquirir un desciento dependiendo la región,
      */
     @Override
-    public void asignaProbabilidadesDescuentos() {
+    public Departamento asignaProbabilidadesDescuentos() {
+        Random azar = new Random();
         probabilidadesDepartamentos.add(new Alimentos());
         probabilidadesDepartamentos.add(new Alimentos());
         probabilidadesDepartamentos.add(new Electronicos());
         probabilidadesDepartamentos.add(new Electrodomesticos());
+        Departamento d = probabilidadesDepartamentos.get(azar.nextInt(probabilidadesDepartamentos.size()));
+        d.aplicarDescuentoDepartamento((azar.nextInt(2)+1)/10);
+        return d;
     }
 
     /**
