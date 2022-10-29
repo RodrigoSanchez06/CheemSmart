@@ -33,7 +33,7 @@ public class Cuenta implements Icuenta {
      * método que resta los fondos de la cuenta tras realizar una compra.
      */
     @Override
-    public void comprar(int factura, int noCuenta, int nip) {
+    public void comprar(Double factura, int noCuenta, int nip) {
         if (ingresar(noCuenta, nip)) {
             if (fondos < factura) {
                 System.out.println("Lo sentimos, fondos insuficientes.");
@@ -79,17 +79,19 @@ public class Cuenta implements Icuenta {
 
     /**
      * Método consultor del numero de cuenta
+     * 
      * @return Un int que representa el numero de cuenta
      */
-    public int obtenerNoCuenta(){
+    public int obtenerNoCuenta() {
         return this.noCuenta;
     }
 
     /**
      * Método consultor del nip de una cuenta
+     * 
      * @return Devuelve un int que representa el nip de una cuenta
      */
-    public int obtenerNip(){
+    public int obtenerNip() {
         return this.nip;
     }
 }

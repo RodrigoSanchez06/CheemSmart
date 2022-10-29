@@ -83,8 +83,9 @@ public class Tienda {
                             idioma.introduceNip();
                             String entradaNip = entrada.nextLine();
                             int nip = Integer.parseInt(entradaNip);
-                            if (encontrado) {
-
+                            if (clienteActual.getCuentaAsociada().obtenerNoCuenta() == numeroCuenta
+                                    && clienteActual.getCuentaAsociada().obtenerNip() == nip) {
+                                clienteActual.getCuentaAsociada().comprar(total, numeroCuenta, nip);
                             }
                         } catch (NumberFormatException nbe) {
                             System.out.println("Numero de cuenta o nip inválido intentalo de nuevo");
