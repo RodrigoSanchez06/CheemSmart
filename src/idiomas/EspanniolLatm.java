@@ -61,7 +61,7 @@ public class EspanniolLatm implements Idioma {
      */
     @Override
     public void compraCompletada() {
-        System.out.println("Muchas gracias por su compra en un momento se imprimirá su ticket");
+        System.out.println("Muchas gracias por su compra");
     }
 
     /**
