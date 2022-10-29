@@ -7,7 +7,7 @@ import catalogo.Departamento;
 import catalogo.Producto;
 
 /**
- *  Clase que representa al departamento de Electroincos de CheemSmart.
+ * Clase que representa al departamento de Electroincos de CheemSmart.
  */
 public class Electronicos implements Departamento {
 
@@ -49,9 +49,9 @@ public class Electronicos implements Departamento {
      * Aplica el descuento a todos los prouctos del departamento.
      */
     @Override
-    public void aplicarDescuentoDepartamento(double d){
+    public void aplicarDescuentoDepartamento(double d) {
         Iterator<Producto> i = electro.iterator();
-        while(i.hasNext())
+        while (i.hasNext())
             i.next().aplicarDescuento(d);
     }
 

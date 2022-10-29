@@ -24,7 +24,7 @@ public interface Idioma {
      * Da a conocer los descuentos disponibles en la región
      * en el idioma actual.
      */
-    public void descuentoPropaganda(boolean existePropaganda);
+    public void descuentoPropaganda(Departamento departamentoDescuento, Double porcentajeDescuento);
 
     /**
      * Da a conocer las opciones disponibles en el idioma actual.
@@ -53,20 +53,22 @@ public interface Idioma {
 
     /**
      * Obtiene el nombre de la región.
+     * 
      * @return nombre de la reguión
      */
     public String getRegion();
 
     /**
-     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre 
+     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */
     public void asignaProbabilidadesDescuentos();
 
     /**
      * Devuelve las probabilidades de que el departamento consiga descuento o no
-     * @return lista de departamentos, cada una representa un elemento en el espacio 
-     * muestral de obtener probabilidad mayor o menor.
+     * 
+     * @return lista de departamentos, cada una representa un elemento en el espacio
+     *         muestral de obtener probabilidad mayor o menor.
      */
     LinkedList<Departamento> getProbabilidades();
 }

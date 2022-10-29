@@ -10,11 +10,11 @@ import catalogo.electronicos.Electronicos;
 /**
  * Clase que Representa al idioma español (España) del sistema CheemSmart.
  */
-public class EspanniolEsp implements Idioma{
+public class EspanniolEsp implements Idioma {
 
     private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
-    public EspanniolEsp(){
+    public EspanniolEsp() {
         asignaProbabilidadesDescuentos();
     }
 
@@ -39,10 +39,10 @@ public class EspanniolEsp implements Idioma{
      * en el idioma actual.
      */
     @Override
-    public void descuentoPropaganda(boolean existePropaganda) {
-        if (existePropaganda) {
-            System.out.println("Ostia, aqui te presentamos las ofertas de hoy.");   
-        }
+    public void descuentoPropaganda(Departamento departamentoDescuento, Double porcentajeDescuento) {
+        System.out.println("Felicidades tio estas son las gangas de hoy: ");
+        System.out.println(porcentajeDescuento + "%" + "Descuento en el departamento de: "
+                + departamentoDescuento.obtenerDepartamento());
     }
 
     /**
@@ -61,8 +61,8 @@ public class EspanniolEsp implements Idioma{
      */
     @Override
     public void compraCompletada() {
-        System.out.println("Su compra ha sido completadada con éxito"+
-        " en un momento le imprimermos su recibo.");
+        System.out.println("Su compra ha sido completadada con éxito" +
+                " en un momento le imprimermos su recibo.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class EspanniolEsp implements Idioma{
      */
     @Override
     public void opcionIncorrecta() {
-        System.out.println("Vaya, te has equivocado de opción tío :(.");      
+        System.out.println("Vaya, te has equivocado de opción tío :(.");
     }
 
     /**
@@ -86,11 +86,12 @@ public class EspanniolEsp implements Idioma{
      */
     @Override
     public void opcionInexistente() {
-        System.out.println("Madre mia wilirex esa opción es inexistente.");   
+        System.out.println("Madre mia wilirex esa opción es inexistente.");
     }
 
     /**
      * Obtiene el nombre de la región.
+     * 
      * @return nombre de la reguión
      */
     @Override
@@ -99,7 +100,7 @@ public class EspanniolEsp implements Idioma{
     }
 
     /**
-     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre 
+     * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */
     @Override
@@ -109,14 +110,15 @@ public class EspanniolEsp implements Idioma{
         probabilidadesDepartamentos.add(new Alimentos());
         probabilidadesDepartamentos.add(new Electronicos());
     }
- 
+
     /**
      * Devuelve las probabilidades de que el departamento consiga descuento o no
-     * @return lista de departamentos, cada una representa un elemento en el espacio 
-     * muestral de obtener probabilidad mayor o menor.
+     * 
+     * @return lista de departamentos, cada una representa un elemento en el espacio
+     *         muestral de obtener probabilidad mayor o menor.
      */
     @Override
-    public LinkedList<Departamento> getProbabilidades(){
+    public LinkedList<Departamento> getProbabilidades() {
         return this.probabilidadesDepartamentos;
     }
 }

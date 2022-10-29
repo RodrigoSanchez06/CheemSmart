@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 import cliente.Cliente;
 import cliente.ProxyCatalogo;
-public class CheemSmart{
+
+public class CheemSmart {
 
     /**
      * Clase principal de CheemSmart
@@ -21,57 +22,58 @@ public class CheemSmart{
             while (true) {
                 try {
                     System.out.println("Selecciona alguna de las siguientes opciones.");
-        
+
                     System.out.println("1. Iniciar Sesión.\n"
-                        + "2. Salir del programa.");
+                            + "2. Salir del programa.");
                     String entradaInicial = entrada.nextLine();
                     opcionInicial = Integer.parseInt(entradaInicial);
-                    if(opcionInicial == 1 || opcionInicial == 2) break;
-                    System.out.println("Opción no existente, intenta de nuevo"); 
+                    if (opcionInicial == 1 || opcionInicial == 2)
+                        break;
+                    System.out.println("Opción no existente, intenta de nuevo");
                 } catch (NumberFormatException nfe) {
                     System.out.println("Entrada inválida, intenta de nuevo");
-                }   
+                }
             }
-
             if (opcionInicial == 1) {
                 System.out.println("Para entrar a la tienda virtual Inicia Sesión.\n");
                 boolean credencialesCorrectas = false;
-                Cliente clienteActual = new Cliente(); //Creamos el un espacio para el cliente al que estemos atendiendo
-    
-                while (!credencialesCorrectas) { //LOGIN (validacion)
-                        System.out.println("Introduce tu Nombre de usuario: ");
-                        String nombreUsuario = (entrada.nextLine()).trim();
-                        System.out.println("Introduce la contraseña: ");
-                        String pass = (entrada.nextLine()).trim();
-    
-                    for (Cliente c : tienda.getListaClientes()) { //Checa cliente por cliente.
-                        if (c.getNombreDeUsuario().equals(nombreUsuario) && c.getContraseña().equals(pass)) {    
+                Cliente clienteActual = new Cliente(); // Creamos el un espacio para el cliente al que estemos
+                                                       // atendiendo
+
+                while (!credencialesCorrectas) { // LOGIN (validacion)
+                    System.out.println("Introduce tu Nombre de usuario: ");
+                    String nombreUsuario = (entrada.nextLine()).trim();
+                    System.out.println("Introduce la contraseña: ");
+                    String pass = (entrada.nextLine()).trim();
+
+                    for (Cliente c : tienda.getListaClientes()) { // Checa cliente por cliente.
+                        if (c.getNombreDeUsuario().equals(nombreUsuario) && c.getContraseña().equals(pass)) {
                             credencialesCorrectas = true;
                             clienteActual = c;
                             break;
-                        } 
-                    } 
-                    if(credencialesCorrectas == true ) break;
-                    System.out.println("Lo siento, nombre de usuario o contraseña son incorrectos, intentalo de nuevo");  
+                        }
+                    }
+                    if (credencialesCorrectas == true)
+                        break;
+                    System.out.println("Lo siento, nombre de usuario o contraseña son incorrectos, intentalo de nuevo");
                 }
-    
-                tienda.cambioIdioma(clienteActual.getPaisDeOrigen()); //Cambia el idioma al del cliente.
-                tienda.getIdioma().saludo(); 
+
+                tienda.cambioIdioma(clienteActual.getPaisDeOrigen()); // Cambia el idioma al del cliente.
+                tienda.getIdioma().saludo();
                 int opcionUsuario;
-    
-                while (true) { //Valida las opciones del usuario.
+
+                while (true) { // Valida las opciones del usuario.
                     try {
                         tienda.getIdioma().opciones();
                         String entradaUsuario = entrada.nextLine();
                         opcionUsuario = Integer.parseInt(entradaUsuario);
-                        
-                        if (opcionUsuario >= 1 && opcionUsuario <= 3){
+
+                        if (opcionUsuario >= 1 && opcionUsuario <= 3) {
                             switch (opcionUsuario) {
                                 case 1:
-                                    //ver catálogo
+                                    tienda.getCatalogo().imprimirCatalogo();
                                     break;
                                 case 2:
-                                    //Realizar Compra
                                     tienda.hacerCompra();
                                     break;
                                 case 3:
@@ -79,15 +81,16 @@ public class CheemSmart{
                                     salir = true;
                                     break;
                                 default:
-                                throw new IllegalStateException("ISE No existen mas opciones");
+                                    throw new IllegalStateException("ISE No existen mas opciones");
                             }
-                        if(opcionUsuario == 3) break;
+                            if (opcionUsuario == 3)
+                                break;
                         } else {
                             tienda.getIdioma().opcionInexistente();
                         }
                     } catch (NumberFormatException e) {
                         tienda.getIdioma().opcionIncorrecta();
-                    }   
+                    }
                 }
             } else {
                 System.out.println("Vuelva pronto.");
