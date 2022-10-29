@@ -1,5 +1,7 @@
 package cuentasBancarias;
 
+import cliente.Cliente;
+
 /**
  * Clase que representa a un Proxy de la cuenta bancaria del usuario.
  */
@@ -7,10 +9,15 @@ public class ProxyCuenta implements Icuenta {
 
     private Cuenta actual;
 
+<<<<<<< HEAD
     public ProxyCuenta(Cuenta c) {
         if (c == null)
             throw new NullPointerException();
         this.actual = c;
+=======
+    public ProxyCuenta(double fondos,int noCuenta, int  nip, Cliente clienteAsociado){
+        this.actual = new Cuenta(fondos, noCuenta, nip, clienteAsociado);
+>>>>>>> 46d260b818ba75bda0f163e355d4f076b39f2d8b
     }
 
     @Override

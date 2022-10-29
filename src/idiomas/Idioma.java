@@ -3,6 +3,7 @@ package idiomas;
 import java.util.LinkedList;
 
 import catalogo.Departamento;
+import cliente.ICatalogo;
 
 /**
  * Interfaz idioma, sirve para definir el comportamiento de un idioma
@@ -62,7 +63,7 @@ public interface Idioma {
      * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */
-    public void asignaProbabilidadesDescuentos();
+    public void asignaProbabilidadesDescuentos(ICatalogo c);
 
     /**
      * Devuelve las probabilidades de que el departamento consiga descuento o no
