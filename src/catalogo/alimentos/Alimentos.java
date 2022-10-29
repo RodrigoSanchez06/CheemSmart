@@ -6,6 +6,9 @@ import java.util.Iterator;
 import catalogo.Departamento;
 import catalogo.Producto;
 
+/**
+ *  Clase que representa al departamento de Alimentos de CheemSmart.
+ */
 public class Alimentos implements Departamento {
 
     private String nombreDepartamento = "Alimentos";
@@ -26,20 +29,26 @@ public class Alimentos implements Departamento {
      * 
      * @return Devuelve un String con el titulo del departamento
      */
+    @Override
     public String obtenerDepartamento() {
         return this.nombreDepartamento;
     }
 
     /**
      * Metodo que devuelve un iterador que permite recorrer los productos del
-     * departamento
+     * departamento.
      * 
-     * @return Devuelve un iterador del departamento en cuestion
+     * @return Devuelve un iterador del departamento en cuestion.
      */
+    @Override
     public Iterator<Producto> obtenerIterador() {
         return alimentos.iterator();
     }
 
+    /**
+     * Aplica el descuento a todos los prouctos del departamento.
+     */
+    @Override
     public void aplicarDescuentoDepartamento(double d){
         Iterator<Producto> i = alimentos.iterator();
         while(i.hasNext())

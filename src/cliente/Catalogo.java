@@ -7,6 +7,9 @@ import catalogo.electrodomesticos.Electrodomesticos;
 import catalogo.alimentos.Alimentos;
 import catalogo.electronicos.Electronicos;
 
+/**
+ * Clase que representa al catálogo de la tienda CheemSmart
+ */
 public class Catalogo implements ICatalogo{
 
     Departamento departamentoAlimentos = new Alimentos();

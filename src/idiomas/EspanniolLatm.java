@@ -108,6 +108,11 @@ public class EspanniolLatm implements Idioma{
         probabilidadesDepartamentos.add(new Electronicos());
     }
 
+    /**
+     * Devuelve las probabilidades de que el departamento consiga descuento o no
+     * @return lista de departamentos, cada una representa un elemento en el espacio 
+     * muestral de obtener probabilidad mayor o menor.
+     */
     public LinkedList<Departamento> getProbabilidades(){
         return this.probabilidadesDepartamentos;
     }
