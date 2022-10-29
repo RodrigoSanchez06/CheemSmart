@@ -71,8 +71,7 @@ public class CheemSmart{
                                     //ver catálogo
                                     break;
                                 case 2:
-                                    //Realizar Compra
-                                    tienda.hacerCompra();
+                                    System.out.println(tienda.hacerCompra()); 
                                     break;
                                 case 3:
                                     tienda.getIdioma().despedida();
