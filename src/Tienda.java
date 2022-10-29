@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import catalogo.Producto;
 import cliente.Cliente;
@@ -21,6 +22,7 @@ public class Tienda {
     private LinkedList<Cliente> listaClientes = agregaClientes();
     private LinkedList<Producto> carritoDeCompra = new LinkedList<>();
     private ICatalogo catalogo = new ProxyCatalogo();
+    private Scanner entrada = new Scanner(System.in);
 
     /**
      * Cambia el idioma para el usuario
@@ -40,7 +42,8 @@ public class Tienda {
         boolean salir = false;
 
         while (!compraFinalizada || !salir) {
-
+            System.out.println("Introduce el numero de barras del producto.");
+            String numeroBarras = entrada.nextLine();
         }
 
         return imprimeTicket(carritoDeCompra);
@@ -49,12 +52,6 @@ public class Tienda {
     /**
      * Imprime el ticket de la compra del cliente.
      */
-
-    private void imprimeTicket() {
-        System.out.println("Imprimiendo Ticket...\n"
-                + "********** CheemSmart *********");
-    }
-
     private String imprimeTicket(LinkedList<Producto> carrito) {
         String ticket;
         ticket = "Imprimiendo Ticket...\n"
@@ -105,7 +102,7 @@ public class Tienda {
 
         Cliente clienteTres = new Cliente("Fred12", "fr3di_21", "Frederick Town",
                 7853255, "Texas 5th AV.", null, ing, ++id);
-        clienteDos.setCuentaAsociada(crearAsociarCuenta(125, 0001, clienteTres, 31922257));
+        clienteDos.setCuentaAsociada(crearAsociarCuenta(125, 2121, clienteTres, 31922257));
         listaClientes.add(clienteUno);
         listaClientes.add(clienteDos);
         listaClientes.add(clienteTres);
