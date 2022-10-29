@@ -112,7 +112,7 @@ public class EspanniolEsp implements Idioma {
         probabilidadesDepartamentos.add(new Electronicos());
         probabilidadesDepartamentos.add(new Electrodomesticos());
         Departamento d = probabilidadesDepartamentos.get(azar.nextInt(probabilidadesDepartamentos.size()));
-        d.aplicarDescuentoDepartamento((((double) azar.nextInt(3))+1)/10);
+        d.aplicarDescuentoDepartamento((((double) azar.nextInt(3)) + 1) / 10);
         return d;
     }
 
