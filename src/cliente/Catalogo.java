@@ -53,6 +53,10 @@ public class Catalogo implements ICatalogo{
         return this.departamentos;
     }
 
+    /**
+     * Método que aplica el descuento correspondiente a cierto departamento
+     * @param d Departamento con el descuento que queremos aplicar
+     */
     public void descuento(Departamento d){
         if(d.obtenerDescuento() == 0)
             throw new IllegalStateException();

@@ -8,7 +8,7 @@ import catalogo.Producto;
  */
 public class LaptopGamerPro implements Producto {
 
-    private double descuento=0;
+    private double descuento=1;
 
     /**
      * regresa el nombre del producto.
@@ -27,7 +27,7 @@ public class LaptopGamerPro implements Producto {
      */
     @Override
     public double precio() {
-        return 18700.99;
+        return 18700.99*this.descuento;
     }
 
     /**

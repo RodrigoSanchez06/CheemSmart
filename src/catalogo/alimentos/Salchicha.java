@@ -8,7 +8,7 @@ import catalogo.Producto;
  */
 public class Salchicha implements Producto {
 
-    private double descuento=0;
+    private double descuento=1;
 
     /**
      * regresa el nombre del producto.
@@ -27,7 +27,7 @@ public class Salchicha implements Producto {
      */
     @Override
     public double precio() {
-        return 47.90;
+        return 47.90*this.descuento;
     }
 
     /**

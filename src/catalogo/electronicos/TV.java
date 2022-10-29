@@ -8,7 +8,7 @@ import catalogo.Producto;
  */
 public class TV implements Producto {
 
-    private double descuento=0;
+    private double descuento=1;
 
     /**
      * regresa el nombre del producto.
@@ -27,7 +27,7 @@ public class TV implements Producto {
      */
     @Override
     public double precio() {
-        return 6599.99;
+        return 6599.99*this.descuento;
     }
 
     /**

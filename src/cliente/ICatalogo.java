@@ -2,17 +2,24 @@ package cliente;
 
 import java.util.Iterator;
 import catalogo.Departamento;
-import java.util.LinkedList;
-import java.util.Random;
-import idiomas.Idioma;
 
 /**
  * Interfaz que define el comportamiento del catálogo de la tienda CheemSmart
  */
 public interface ICatalogo {
+    /**
+     * Metodo que devuelve un iterador que recorre los departamentos
+     */
     Iterator<Departamento> iteradorDepartamentos();
 
+    /**
+     * Método que imprime en pantalla los productos del catalago organizados por departamentos
+     */
     void imprimirCatalogo();
 
-    public void descuento(Departamento d);
+    /**
+     * Método que aplica el descuento correspondiente a cierto departamento
+     * @param d Departamento con el descuento que queremos aplicar
+     */
+    void descuento(Departamento d);
 }
