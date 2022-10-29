@@ -7,7 +7,7 @@ import catalogo.Departamento;
 import catalogo.Producto;
 
 /**
- *  Clase que representa al departamento de Alimentos de CheemSmart.
+ * Clase que representa al departamento de Alimentos de CheemSmart.
  */
 public class Alimentos implements Departamento {
 
@@ -50,14 +50,17 @@ public class Alimentos implements Departamento {
      * Aplica el descuento a todos los prouctos del departamento.
      */
     @Override
-    public void aplicarDescuentoDepartamento(double d){
+    public void aplicarDescuentoDepartamento(double d) {
         Iterator<Producto> i = alimentos.iterator();
-        while(i.hasNext())
+        while (i.hasNext())
             i.next().aplicarDescuento(d);
-        this.descuento=d;
+        this.descuento = d;
     }
-    
-    public double obtenerDescuento(){
-        return this.descuento*100;
+
+    /**
+     * Obtiene el descuento del producto
+     */
+    public double obtenerDescuento() {
+        return this.descuento * 100;
     }
 }

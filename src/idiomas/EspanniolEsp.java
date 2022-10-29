@@ -156,4 +156,25 @@ public class EspanniolEsp implements Idioma {
     public String codigoBarrasIncorrecto() {
         return "Ostia no he visto ese codigo de barras en mi vida, intentalo de nuevo!!!";
     }
+
+    /**
+     * Hace saber al usuario que su ticket se está imprimiendo
+     * 
+     * @return aviso de impresión de ticket
+     */
+    @Override
+    public String imprimiendoTicket() {
+        return "Imprimiendo Ticket...\n"
+                + "********** CheemSmart *********";
+    }
+
+    /**
+     * Hace saber al usuario cuando será su entregra programada.
+     * 
+     * @return cuando será su entrega programada.
+     */
+    @Override
+    public String entregaProgramada() {
+        return "Ostia Su pedido estará llegando el 20/nov/2022";
+    }
 }

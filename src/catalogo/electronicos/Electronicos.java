@@ -57,8 +57,11 @@ public class Electronicos implements Departamento {
         this.descuento = d;
     }
 
-    public double obtenerDescuento(){
-        return this.descuento*100;
+    /**
+     * Obtiene el descuento del producto
+     */
+    public double obtenerDescuento() {
+        return this.descuento * 100;
     }
 
 }

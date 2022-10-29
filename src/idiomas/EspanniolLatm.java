@@ -146,6 +146,17 @@ public class EspanniolLatm implements Idioma {
     }
 
     /**
+     * Hace saber al usuario que su ticket se está imprimiendo
+     * 
+     * @return aviso de impresión de ticket
+     */
+    @Override
+    public String imprimiendoTicket() {
+        return "Imprimiendo Ticket...\n"
+                + "********** CheemSmart *********";
+    }
+
+    /**
      * Avisa al usuario que el código de barras que introdujo es incorrecto.
      * 
      * @return aviso codigo de barras incorrecto.
@@ -153,6 +164,16 @@ public class EspanniolLatm implements Idioma {
     @Override
     public String codigoBarrasIncorrecto() {
         return "El código de barras que introduciste es incorrecto. Intentalo de nuevo.";
+    }
+
+    /**
+     * Hace saber al usuario cuando será su entregra programada.
+     * 
+     * @return cuando será su entrega programada.
+     */
+    @Override
+    public String entregaProgramada() {
+        return "Su entrega estará llegando el 20/nov/2022";
     }
 
 }

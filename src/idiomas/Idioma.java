@@ -80,6 +80,20 @@ public interface Idioma {
     public String codigoBarrasIncorrecto();
 
     /**
+     * Hace saber al usuario que su ticket se está imprimiendo
+     * 
+     * @return aviso de impresión de ticket
+     */
+    public String imprimiendoTicket();
+
+    /**
+     * Hace saber al usuario cuando será su entregra programada.
+     * 
+     * @return cuando será su entrega programada.
+     */
+    public String entregaProgramada();
+
+    /**
      * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */

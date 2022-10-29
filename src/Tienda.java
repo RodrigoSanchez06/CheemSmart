@@ -45,7 +45,7 @@ public class Tienda {
         double total = 0;
 
         while (!compraFinalizada || !salir) {
-            System.out.println("Introduce el numero de barras del producto.");
+            idioma.introduceNumBarras();
             String numeroBarras = entrada.nextLine();
             Iterator<Departamento> itDep = catalogo.iteradorDepartamentos();
             boolean encontrado = false;
@@ -60,12 +60,11 @@ public class Tienda {
                 }
             }
             if (encontrado) {
-                System.out.println("Producto añadido al carrito de compras.");
+                idioma.productoAnniadido();
             } else {
-                System.out.println("Código de barras incorrecto, intentalo de");
+                idioma.codigoBarrasIncorrecto();
             }
         }
-
         return imprimeTicket(carritoDeCompra, total);
     }
 
@@ -74,17 +73,18 @@ public class Tienda {
      */
     private String imprimeTicket(LinkedList<Producto> carrito, double Total) {
         String ticket;
-        ticket = "Imprimiendo Ticket...\n"
-                + "********** CheemSmart *********";
+        ticket = idioma.imprimiendoTicket();
         for (Producto p : carritoDeCompra) {
+            System.out.println("---------------------------------------");
             System.out.println(p.nombre() + "\n"
                     + "Precio : " + p.precio() + "\n"
                     + "Codigo de barras: " + p.codigoBarras() + "\n");
+            System.out.println("---------------------------------------");
         }
         ticket += "\nTOTAL: ";
         ticket += "\n******************************";
 
-        ticket += "\nSu entrega está programada para el día: 12/nov/2022";
+        ticket += "\n" + idioma.entregaProgramada();
 
         return ticket;
     }
