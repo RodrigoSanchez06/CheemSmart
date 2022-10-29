@@ -28,5 +28,5 @@ public interface Departamento {
      */
     void aplicarDescuentoDepartamento(double d);
 
-    int obtenerDescuento();
+    double obtenerDescuento();
 }
