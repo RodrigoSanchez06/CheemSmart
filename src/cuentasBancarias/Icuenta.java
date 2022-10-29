@@ -7,6 +7,12 @@ import idiomas.Idioma;
  */
 public interface Icuenta {
 
+    /**
+     * Método que valida el numero de cuenta y nip del propietario de la cuenta
+     * @param noCuenta Numero de cuenta
+     * @param nip Nip de la cuenta
+     * @return Devuelve true de concordar los datos o false de lo contrario
+     */
     boolean ingresar(int noCuenta, int nip);
 
     /**
