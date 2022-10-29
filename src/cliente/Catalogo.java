@@ -8,10 +8,6 @@ import catalogo.alimentos.Alimentos;
 import catalogo.electronicos.Electronicos;
 
 public class Catalogo implements ICatalogo{
-    // hacer una clase para alimentos
-    // hacer una clase para electrodomesticos, electronicos y alimentos, en su
-    // constructor le agrego los productos de su categoria. y les hago un metodo
-    // para que devuelvan su iterador. el menu lo cambio a departamento
 
     Departamento departamentoAlimentos = new Alimentos();
     Departamento departamentoElectronicos = new Electronicos();
