@@ -14,10 +14,5 @@ public interface ICatalogo {
 
     void imprimirCatalogo();
 
-    public static void descuento(Idioma idioma){
-        LinkedList<Departamento> proba = idioma.getProbabilidades();
-        Random azar = new Random();
-        Departamento conDescuento = proba.get(azar.nextInt(proba.size()));
-        conDescuento.aplicarDescuentoDepartamento((azar.nextInt(3)+1)/10);
-    }
+    public void descuento(Departamento d);
 }
