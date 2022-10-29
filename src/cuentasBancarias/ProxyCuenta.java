@@ -1,6 +1,7 @@
 package cuentasBancarias;
 
 import cliente.Cliente;
+import idiomas.Idioma;
 
 /**
  * Clase que representa a un Proxy de la cuenta bancaria del usuario.
@@ -26,15 +27,25 @@ public class ProxyCuenta implements Icuenta {
      * método que resta los fondos de la cuenta tras realizar una compra.
      */
     @Override
-    public void comprar(Double factura, int noCuenta, int nip) {
-        actual.comprar(factura, noCuenta, nip);
+    public void comprar(Double factura, int noCuenta, int nip, Idioma idioma) {
+        actual.comprar(factura, noCuenta, nip, idioma);
     }
 
     /**
      * Devuelve los fondos de la cuenta bancaria.
      */
     @Override
-    public void consultarFondos() {
-        this.actual.consultarFondos();
+    public double consultarFondos() {
+        return this.actual.consultarFondos();
+    }
+
+    @Override
+    public int obtenerNoCuenta() {
+        return this.actual.obtenerNoCuenta();
+    }
+
+    @Override
+    public int obtenerNip() {
+        return this.actual.obtenerNip();
     }
 }

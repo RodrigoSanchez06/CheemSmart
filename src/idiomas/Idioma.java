@@ -127,4 +127,20 @@ public interface Idioma {
      *         muestral de obtener probabilidad mayor o menor.
      */
     LinkedList<Departamento> getProbabilidades();
+
+    /**
+     * Avisa al usuario que sus fondos son insuficientes.
+     * 
+     * @return aviso de fondos insuficientes
+     */
+    public String fondosInsuficientes();
+
+    /**
+     * Imprime el estado de cuenta del usuario
+     * 
+     * @param antesCompra   fondos antes de la compra
+     * @param despuesCompra fondos despues de la compra
+     * @return estado de cuenta
+     */
+    public String saldoFinal(double antesCompra, double despuesCompra);
 }

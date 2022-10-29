@@ -42,7 +42,7 @@ public class EspanniolEsp implements Idioma {
     @Override
     public void descuentoPropaganda(Departamento departamentoDescuento, Double porcentajeDescuento) {
         System.out.println("Felicidades tio estas son las gangas de hoy: ");
-        System.out.println(porcentajeDescuento + "%" + "Descuento en el departamento de: "
+        System.out.println(porcentajeDescuento + "% " + "Descuento en el departamento de: "
                 + departamentoDescuento.obtenerDepartamento());
     }
 
@@ -208,5 +208,25 @@ public class EspanniolEsp implements Idioma {
     @Override
     public String introduceNoCuenta() {
         return "Introduce tu numero de cuenta, tio:";
+    }
+
+    /**
+     * Avisa al usuario que sus fondos son insuficientes.
+     * 
+     * @return aviso de fondos insuficientes
+     */
+    public String fondosInsuficientes() {
+        return "Ostia no tienes suficiente dinero.";
+    }
+
+    /**
+     * Imprime el estado de cuenta del usuario
+     * 
+     * @param antesCompra   fondos antes de la compra
+     * @param despuesCompra fondos despues de la compra
+     * @return estado de cuenta
+     */
+    public String saldoFinal(double antesCompra, double despuesCompra) {
+        return "Pasta inicial: " + antesCompra + "\n pasta final: " + despuesCompra;
     }
 }

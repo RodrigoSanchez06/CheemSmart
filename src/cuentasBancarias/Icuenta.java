@@ -1,5 +1,7 @@
 package cuentasBancarias;
 
+import idiomas.Idioma;
+
 /**
  * Interfaz que define el comportamiento de una Cuenta bancaria de CheemSmart
  */
@@ -10,12 +12,12 @@ public interface Icuenta {
     /**
      * método que resta los fondos de la cuenta tras realizar una compra.
      */
-    void comprar(Double factura, int noCuenta, int nip);
+    void comprar(Double factura, int noCuenta, int nip, Idioma idioma);
 
     /**
      * Devuelve los fondos de la cuenta bancaria.
      */
-    void consultarFondos();
+    double consultarFondos();
 
     /**
      * Método consultor del numero de cuenta

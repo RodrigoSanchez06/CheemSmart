@@ -77,21 +77,22 @@ public class Tienda {
                     } else if (opcionCompra == 2) {
                         imprimeTicket(carritoDeCompra, total);
                         try {
-                            idioma.introduceNoCuenta();
+                            System.out.println(idioma.introduceNoCuenta());
                             String entradaNumCuenta = entrada.nextLine();
                             int numeroCuenta = Integer.parseInt(entradaNumCuenta);
-                            idioma.introduceNip();
+                            System.out.println(idioma.introduceNip());
                             String entradaNip = entrada.nextLine();
                             int nip = Integer.parseInt(entradaNip);
                             if (clienteActual.getCuentaAsociada().obtenerNoCuenta() == numeroCuenta
                                     && clienteActual.getCuentaAsociada().obtenerNip() == nip) {
-                                clienteActual.getCuentaAsociada().comprar(total, numeroCuenta, nip);
+                                clienteActual.getCuentaAsociada().comprar(total, numeroCuenta, nip, idioma);
                             }
                         } catch (NumberFormatException nbe) {
-                            System.out.println("Numero de cuenta o nip inválido intentalo de nuevo");
+                            idioma.datosIncorrectos();
                         }
                         return;
                     } else {
+                        carritoDeCompra = new LinkedList<Producto>();
                         return;
                     }
                 } catch (NumberFormatException nbe) {
@@ -151,7 +152,7 @@ public class Tienda {
         EspanniolLatm latm = new EspanniolLatm();
         int id = 0;
 
-        Cliente clienteUno = new Cliente("0", "0", "Juan Perez",
+        Cliente clienteUno = new Cliente("oscar", "oscar123", "Juan Perez",
                 552509051, "Nativitas CDMX", null, latm, id);
         clienteUno.setCuentaAsociada(crearAsociarCuenta(20000, 1234, clienteUno, 22060325));
 
@@ -161,7 +162,8 @@ public class Tienda {
 
         Cliente clienteTres = new Cliente("Fred12", "fr3di_21", "Frederick Town",
                 7853255, "Texas 5th AV.", null, ing, ++id);
-        clienteDos.setCuentaAsociada(crearAsociarCuenta(125, 2121, clienteTres, 31922257));
+        clienteTres.setCuentaAsociada(crearAsociarCuenta(125, 2121, clienteTres, 31922257));
+
         listaClientes.add(clienteUno);
         listaClientes.add(clienteDos);
         listaClientes.add(clienteTres);
