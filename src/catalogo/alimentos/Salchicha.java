@@ -27,7 +27,7 @@ public class Salchicha implements Producto {
      */
     @Override
     public double precio() {
-        return 47.90*this.descuento;
+        return (47.90*this.descuento);
     }
 
     /**

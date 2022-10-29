@@ -60,12 +60,15 @@ public class Catalogo implements ICatalogo{
     public void descuento(Departamento d){
         if(d.obtenerDescuento() == 0)
             throw new IllegalStateException();
-        if(d.obtenerDepartamento().equals("Alimentos"))
-            departamentoAlimentos = d;
-        else if(d.obtenerDepartamento().equals("Electronicos"))
-            departamentoElectronicos = d;
-        else if(d.obtenerDepartamento().equals("Electrodomesticos"))
-            departamentoElectrodomesticos = d;
+        if(d.obtenerDepartamento().equals("Alimentos")){
+            departamentoAlimentos.aplicarDescuentoDepartamento(d.obtenerDescuento()/100);
+        }
+        else if(d.obtenerDepartamento().equals("Electronicos")){
+            departamentoElectronicos.aplicarDescuentoDepartamento(d.obtenerDescuento()/100);
+        }
+        else if(d.obtenerDepartamento().equals("Electrodomesticos")){
+            departamentoElectrodomesticos.aplicarDescuentoDepartamento(d.obtenerDescuento()/100);
+        }
     }
 
 }

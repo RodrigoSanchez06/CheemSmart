@@ -27,7 +27,7 @@ public class TV implements Producto {
      */
     @Override
     public double precio() {
-        return 6599.99*this.descuento;
+        return (6599.99*this.descuento);
     }
 
     /**

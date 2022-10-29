@@ -27,7 +27,7 @@ public class Lavadora implements Producto {
      */
     @Override
     public double precio() {
-        return 6999.80*this.descuento;
+        return (6999.80*this.descuento);
     }
 
     /**
