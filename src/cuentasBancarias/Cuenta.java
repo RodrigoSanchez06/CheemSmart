@@ -1,6 +1,7 @@
 package cuentasBancarias;
 
 import cliente.Cliente;
+import idiomas.Idioma;
 
 /**
  * Clase que representa a una cuenta bancaria de un cliente asociado a
@@ -33,16 +34,18 @@ public class Cuenta implements Icuenta {
      * método que resta los fondos de la cuenta tras realizar una compra.
      */
     @Override
-    public void comprar(Double factura, int noCuenta, int nip) {
+    public void comprar(Double factura, int noCuenta, int nip, Idioma idioma) {
         if (ingresar(noCuenta, nip)) {
             if (fondos < factura) {
-                System.out.println("Lo sentimos, fondos insuficientes.");
+                System.out.println(idioma.fondosInsuficientes());
                 return;
             }
+            Double antesCompra = consultarFondos();
             fondos = fondos - factura;
-            consultarFondos();
+            System.out.println(idioma.saldoFinal(antesCompra, fondos));
+            idioma.compraCompletada();
         } else {
-            System.out.println("El numero de cuenta o el nip, son incorrectos.");
+            idioma.datosIncorrectos();
         }
     }
 
@@ -50,8 +53,8 @@ public class Cuenta implements Icuenta {
      * Devuelve los fondos de la cuenta bancaria.
      */
     @Override
-    public void consultarFondos() {
-        System.out.println("Saldo de la cuenta: " + fondos);
+    public double consultarFondos() {
+        return this.fondos;
     }
 
     /**

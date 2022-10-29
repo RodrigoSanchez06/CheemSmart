@@ -41,7 +41,7 @@ public class EspanniolLatm implements Idioma {
     @Override
     public void descuentoPropaganda(Departamento departamentoDescuento, Double porcentajeDescuento) {
         System.out.println("Estas son las ofertas que tenemos para ti: ");
-        System.out.println(porcentajeDescuento + "%" + "Descuento en el departamento de: "
+        System.out.println(porcentajeDescuento + "% " + "Descuento en el departamento de: "
                 + departamentoDescuento.obtenerDepartamento());
     }
 
@@ -206,6 +206,26 @@ public class EspanniolLatm implements Idioma {
     @Override
     public String introduceNoCuenta() {
         return "Introduce tu numero de cuenta";
+    }
+
+    /**
+     * Avisa al usuario que sus fondos son insuficientes.
+     * 
+     * @return aviso de fondos insuficientes
+     */
+    public String fondosInsuficientes() {
+        return "Error en compra, Fondos insuficientes.";
+    }
+
+    /**
+     * Imprime el estado de cuenta del usuario
+     * 
+     * @param antesCompra   fondos antes de la compra
+     * @param despuesCompra fondos despues de la compra
+     * @return estado de cuenta
+     */
+    public String saldoFinal(double antesCompra, double despuesCompra) {
+        return "Saldo inicial: " + antesCompra + "\n Saldo final: " + despuesCompra;
     }
 
 }
