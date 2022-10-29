@@ -8,7 +8,7 @@ import catalogo.Producto;
  */
 public class Dron implements Producto {
 
-    private double descuento=0;
+    private double descuento=1;
 
     /**
      * regresa el nombre del producto.
@@ -27,7 +27,7 @@ public class Dron implements Producto {
      */
     @Override
     public double precio() {
-        return 3250.85;
+        return 3250.85*this.descuento;
     }
 
     /**

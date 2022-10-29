@@ -8,7 +8,7 @@ import catalogo.Producto;
  */
 public class Licuadora implements Producto {
 
-    private double descuento=0;
+    private double descuento=1;
 
     /**
      * regresa el nombre del producto.
@@ -27,7 +27,7 @@ public class Licuadora implements Producto {
      */
     @Override
     public double precio() {
-        return 895.99;
+        return 895.99*this.descuento;
     }
 
     /**
