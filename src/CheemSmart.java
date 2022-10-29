@@ -59,9 +59,8 @@ public class CheemSmart {
 
                 tienda.cambioIdioma(clienteActual.getPaisDeOrigen()); // Cambia el idioma al del cliente.
                 tienda.getIdioma().saludo();
-                Departamento descuentoDsto = tienda.getIdioma().asignaProbabilidadesDescuentos();
-                Double porcentajeDescuento = descuentoDsto.obtenerDescuento();
-                tienda.getIdioma().descuentoPropaganda(descuentoDsto, porcentajeDescuento);
+                Departamento d = tienda.getIdioma().asignaProbabilidadesDescuentos();
+                tienda.getIdioma().descuentoPropaganda(d, (double) d.obtenerDescuento());
                 int opcionUsuario;
 
                 while (true) { // Valida las opciones del usuario.
