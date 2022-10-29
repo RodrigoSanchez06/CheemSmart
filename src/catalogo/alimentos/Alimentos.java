@@ -57,7 +57,7 @@ public class Alimentos implements Departamento {
         this.descuento=d;
     }
     
-    public int obtenerDescuento(){
-        return (int) this.descuento*100;
+    public double obtenerDescuento(){
+        return this.descuento;
     }
 }
