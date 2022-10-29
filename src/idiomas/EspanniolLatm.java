@@ -176,4 +176,36 @@ public class EspanniolLatm implements Idioma {
         return "Su entrega estará llegando el 20/nov/2022";
     }
 
+    /**
+     * Hace saber al usuario las opciones de compra.
+     * 
+     * @return opciones de compra
+     */
+    @Override
+    public String opcionesEnCompra() {
+        return "1. - introducir otro producto.\n"
+                + "2. - Terminar Compra\n"
+                + "3. - Cancelar Compra.";
+    }
+
+    /**
+     * Hace saber al usuario que debe introducir su nip
+     * 
+     * @return aviso introducir no de cuenta.
+     */
+    @Override
+    public String introduceNip() {
+        return "Introduce tu nip por favor.";
+    }
+
+    /**
+     * Hace saber al usuario que introduzca su num de cuenta
+     * 
+     * @return aviso de introducir no de Cuenta
+     */
+    @Override
+    public String introduceNoCuenta() {
+        return "Introduce tu numero de cuenta";
+    }
+
 }

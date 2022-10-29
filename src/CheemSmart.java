@@ -37,8 +37,8 @@ public class CheemSmart {
             if (opcionInicial == 1) {
                 System.out.println("Para entrar a la tienda virtual Inicia Sesión.\n");
                 boolean credencialesCorrectas = false;
-                Cliente clienteActual = new Cliente(); // Creamos el un espacio para el cliente al que estemos
-                                                       // atendiendo
+                Cliente clienteActual = null; // Creamos el un espacio para el cliente al que estemos
+                // atendiendo
 
                 while (!credencialesCorrectas) { // LOGIN (validacion)
                     System.out.println("Introduce tu Nombre de usuario: ");
@@ -57,6 +57,8 @@ public class CheemSmart {
                         break;
                     System.out.println("Lo siento, nombre de usuario o contraseña son incorrectos, intentalo de nuevo");
                 }
+
+                tienda.asignarClienteActual(clienteActual);
 
                 tienda.cambioIdioma(clienteActual.getPaisDeOrigen()); // Cambia el idioma al del cliente.
                 tienda.getIdioma().saludo();
@@ -79,7 +81,7 @@ public class CheemSmart {
                                     break;
                                 case 2:
                                     tienda.getCatalogo().imprimirCatalogo();
-                                    System.out.println(tienda.hacerCompra());
+                                    tienda.hacerCompra();
                                     break;
                                 case 3:
                                     tienda.getIdioma().despedida();

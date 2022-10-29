@@ -176,4 +176,36 @@ public class Ingles implements Idioma {
     public String entregaProgramada() {
         return "your delivery will be ready on 11/23/2022";
     }
+
+    /**
+     * Hace saber al usuario las opciones de compra.
+     * 
+     * @return opciones de compra
+     */
+    @Override
+    public String opcionesEnCompra() {
+        return "1. - buy another product.\n"
+                + "2. - finish buying\n"
+                + "3. - cancel purchase.";
+    }
+
+    /**
+     * Hace saber al usuario que debe introducir su nip
+     * 
+     * @return aviso introducir no de cuenta.
+     */
+    @Override
+    public String introduceNip() {
+        return "enter the pin";
+    }
+
+    /**
+     * Hace saber al usuario que introduzca su num de cuenta
+     * 
+     * @return aviso de introducir no de Cuenta
+     */
+    @Override
+    public String introduceNoCuenta() {
+        return "enter account number";
+    }
 }
