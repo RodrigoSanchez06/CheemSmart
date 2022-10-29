@@ -37,4 +37,20 @@ public class ProxyCuenta implements Icuenta {
     public void consultarFondos() {
         this.actual.consultarFondos();
     }
+
+    /**
+     * Método consultor del numero de cuenta
+     * @return Un int que representa el numero de cuenta
+     */
+    public int obtenerNoCuenta(){
+        return this.actual.obtenerNoCuenta();
+    }
+
+    /**
+     * Método consultor del nip de una cuenta
+     * @return Devuelve un int que representa el nip de una cuenta
+     */
+    public int obtenerNip(){
+        return this.actual.obtenerNip();
+    }
 }

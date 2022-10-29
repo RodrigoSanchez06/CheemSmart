@@ -16,4 +16,16 @@ public interface Icuenta{
      * Devuelve los fondos de la cuenta bancaria.
      */
     void consultarFondos();
+
+    /**
+     * Método consultor del numero de cuenta
+     * @return Un int que representa el numero de cuenta
+     */
+    int obtenerNoCuenta();
+
+    /**
+     * Método consultor del nip de una cuenta
+     * @return Devuelve un int que representa el nip de una cuenta
+     */
+    int obtenerNip();
 }

@@ -67,4 +67,20 @@ public class Cuenta implements Icuenta{
     public Cliente getClienteAsociado(){
         return this.clienteAsociado;
     }
+
+    /**
+     * Método consultor del numero de cuenta
+     * @return Un int que representa el numero de cuenta
+     */
+    public int obtenerNoCuenta(){
+        return this.noCuenta;
+    }
+
+    /**
+     * Método consultor del nip de una cuenta
+     * @return Devuelve un int que representa el nip de una cuenta
+     */
+    public int obtenerNip(){
+        return this.nip;
+    }
 }
