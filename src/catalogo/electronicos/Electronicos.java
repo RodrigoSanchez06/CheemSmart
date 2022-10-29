@@ -58,7 +58,7 @@ public class Electronicos implements Departamento {
     }
 
     public double obtenerDescuento(){
-        return this.descuento;
+        return this.descuento*100;
     }
 
 }
