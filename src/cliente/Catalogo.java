@@ -15,7 +15,7 @@ public class Catalogo implements ICatalogo{
     private Departamento departamentoAlimentos = new Alimentos();
     private Departamento departamentoElectronicos = new Electronicos();
     private Departamento departamentoElectrodomesticos = new Electrodomesticos();
-    private Iterator<Departamento> departamentos;
+    private LinkedList<Departamento> departamentos;
 
     /**
      * Constructor por omision de un catalogo por defecto
@@ -25,7 +25,7 @@ public class Catalogo implements ICatalogo{
         sDepartamentos.add(departamentoAlimentos);
         sDepartamentos.add(departamentoElectrodomesticos);
         sDepartamentos.add(departamentoElectronicos);
-        this.departamentos = sDepartamentos.iterator();
+        this.departamentos = sDepartamentos;
     }
 
     /**
@@ -50,7 +50,7 @@ public class Catalogo implements ICatalogo{
      * Metodo que devuelve un iterador que recorre los departamentos
      */
     public Iterator<Departamento> iteradorDepartamentos(){
-        return this.departamentos;
+        return this.departamentos.iterator();
     }
 
     /**
