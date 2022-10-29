@@ -111,7 +111,7 @@ public class Ingles implements Idioma {
         probabilidadesDepartamentos.add(new Electronicos());
         probabilidadesDepartamentos.add(new Electrodomesticos());
         Departamento d = probabilidadesDepartamentos.get(azar.nextInt(probabilidadesDepartamentos.size()));
-        d.aplicarDescuentoDepartamento((azar.nextInt(2)+1)/10);
+        d.aplicarDescuentoDepartamento((azar.nextInt(3)+1)/10);
         return d;
     }
 
