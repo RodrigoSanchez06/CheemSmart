@@ -91,9 +91,9 @@ public class Tienda {
      */
     private LinkedList<Cliente> agregaClientes() {
         LinkedList<Cliente> listaClientes = new LinkedList<Cliente>();
-        EspanniolLatm latm = new EspanniolLatm(catalogo);
-        EspanniolEsp esp = new EspanniolEsp(catalogo);
-        Ingles ing = new Ingles(catalogo);
+        EspanniolEsp esp = new EspanniolEsp();
+        Ingles ing = new Ingles();
+        EspanniolLatm latm = new EspanniolLatm();
         int id = 0;
 
         Cliente clienteUno = new Cliente("JuanitoPro777", "juan1234", "Juan Perez",
