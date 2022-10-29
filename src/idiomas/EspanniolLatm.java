@@ -1,9 +1,10 @@
 package idiomas;
 
 import java.util.LinkedList;
-import java.util.Iterator;
 import catalogo.Departamento;
-import cliente.ICatalogo;
+import catalogo.alimentos.Alimentos;
+import catalogo.electrodomesticos.Electrodomesticos;
+import catalogo.electronicos.Electronicos;
 
 /**
  * Clase que Representa al idioma español (LATAM) del sistema CheemSmart.
@@ -12,8 +13,8 @@ public class EspanniolLatm implements Idioma {
 
     private LinkedList<Departamento> probabilidadesDepartamentos = new LinkedList<>();
 
-    public EspanniolLatm(ICatalogo c) {
-        asignaProbabilidadesDescuentos(c);
+    public EspanniolLatm() {
+        asignaProbabilidadesDescuentos();
     }
 
     /**
@@ -102,15 +103,11 @@ public class EspanniolLatm implements Idioma {
      * departamentos de adquirir un desciento dependiendo la región,
      */
     @Override
-    public void asignaProbabilidadesDescuentos(ICatalogo c) {
-        Iterator<Departamento> i = c.iteradorDepartamentos();
-        while (i.hasNext()) {
-            Departamento d = i.next();
-            probabilidadesDepartamentos.add(d);
-            if (d.obtenerDepartamento().equals("Alimentos"))
-                ;
-            probabilidadesDepartamentos.add(d);
-        }
+    public void asignaProbabilidadesDescuentos() {
+        probabilidadesDepartamentos.add(new Alimentos());
+        probabilidadesDepartamentos.add(new Alimentos());
+        probabilidadesDepartamentos.add(new Electronicos());
+        probabilidadesDepartamentos.add(new Electrodomesticos());
     }
 
     /**
