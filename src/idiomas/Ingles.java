@@ -133,8 +133,7 @@ public class Ingles implements Idioma {
      */
     @Override
     public String introduceNumBarras() {
-        // TODO Auto-generated method stub
-        return null;
+        return "please enter the barcode";
     }
 
     /**
@@ -144,8 +143,18 @@ public class Ingles implements Idioma {
      */
     @Override
     public String productoAnniadido() {
-        // TODO Auto-generated method stub
-        return null;
+        return "The product has been added successfully";
+    }
+
+    /**
+     * Hace saber al usuario que su ticket se está imprimiendo
+     * 
+     * @return aviso de impresión de ticket
+     */
+    @Override
+    public String imprimiendoTicket() {
+        return "Printing Ticket...\n"
+                + "********** CheemSmart *********";
     }
 
     /**
@@ -155,7 +164,16 @@ public class Ingles implements Idioma {
      */
     @Override
     public String codigoBarrasIncorrecto() {
-        // TODO Auto-generated method stub
-        return null;
+        return "wrong barcode";
+    }
+
+    /**
+     * Hace saber al usuario cuando será su entregra programada.
+     * 
+     * @return cuando será su entrega programada.
+     */
+    @Override
+    public String entregaProgramada() {
+        return "your delivery will be ready on 11/23/2022";
     }
 }

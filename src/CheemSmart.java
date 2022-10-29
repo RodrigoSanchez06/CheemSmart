@@ -60,10 +60,12 @@ public class CheemSmart {
                 tienda.cambioIdioma(clienteActual.getPaisDeOrigen()); // Cambia el idioma al del cliente.
                 tienda.getIdioma().saludo();
                 Departamento d = tienda.getIdioma().asignaProbabilidadesDescuentos();
-                tienda.getIdioma().descuentoPropaganda(d, (double) d.obtenerDescuento());
+                tienda.getCatalogo().descuento(d);
+                tienda.getCatalogo().imprimirCatalogo();
+                tienda.getIdioma().descuentoPropaganda(d, (double) d.obtenerDescuento());// Muestra descuentos
                 int opcionUsuario;
-
-                while (true) { // Valida las opciones del usuario.
+                boolean cerrarSesion = false;
+                while (!cerrarSesion) { // Valida las opciones del usuario.
                     try {
                         tienda.getIdioma().opciones();
                         String entradaUsuario = entrada.nextLine();
@@ -80,7 +82,6 @@ public class CheemSmart {
                                     break;
                                 case 3:
                                     tienda.getIdioma().despedida();
-                                    salir = true;
                                     break;
                                 default:
                                     throw new IllegalStateException("ISE No existen mas opciones");
