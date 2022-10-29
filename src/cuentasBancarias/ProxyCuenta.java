@@ -10,10 +10,23 @@ public class ProxyCuenta implements Icuenta {
 
     private Cuenta actual;
 
+    /**
+     * Constructor parametrizado de un proxy de una cuenta bancaria
+     * @param fondos Fondos iniciales de la cuenta
+     * @param noCuenta Numero de cuenta 
+     * @param nip Nip de la cuenta
+     * @param clienteAsociado Cliente propetario de la compu
+     */
     public ProxyCuenta(double fondos, int noCuenta, int nip, Cliente clienteAsociado) {
         this.actual = new Cuenta(fondos, noCuenta, nip, clienteAsociado);
     }
 
+    /**
+     * Método que valida el numero de cuenta y nip del propietario de la cuenta
+     * @param noCuenta Numero de cuenta
+     * @param nip Nip de la cuenta
+     * @return Devuelve true de concordar los datos o false de lo contrario
+     */
     @Override
     public boolean ingresar(int numCuenta, int nip) {
         if (this.actual.ingresar(numCuenta, nip)) {
