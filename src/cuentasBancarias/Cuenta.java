@@ -3,9 +3,10 @@ package cuentasBancarias;
 import cliente.Cliente;
 
 /**
- * Clase que representa a una cuenta bancaria de un cliente asociado a CheemSmart
+ * Clase que representa a una cuenta bancaria de un cliente asociado a
+ * CheemSmart
  */
-public class Cuenta implements Icuenta{
+public class Cuenta implements Icuenta {
 
     private double fondos;
     private int noCuenta;
@@ -13,13 +14,15 @@ public class Cuenta implements Icuenta{
     private Cliente clienteAsociado;
 
     /**
-     * Constructor de la cuenta de bancaria de los clientes, guardando su información
+     * Constructor de la cuenta de bancaria de los clientes, guardando su
+     * información
+     * 
      * @param fondos
      * @param noCuenta
      * @param nip
      * @param clienteAsociado
      */
-    public Cuenta(double fondos,int noCuenta, int  nip, Cliente clienteAsociado){
+    public Cuenta(double fondos, int noCuenta, int nip, Cliente clienteAsociado) {
         this.fondos = fondos;
         this.noCuenta = noCuenta;
         this.nip = nip;
@@ -32,8 +35,12 @@ public class Cuenta implements Icuenta{
     @Override
     public void comprar(int factura, int noCuenta, int nip) {
         if (ingresar(noCuenta, nip)) {
+            if (fondos < factura) {
+                System.out.println("Lo sentimos, fondos insuficientes.");
+                return;
+            }
             fondos = fondos - factura;
-            consultarFondos();   
+            consultarFondos();
         } else {
             System.out.println("El numero de cuenta o el nip, son incorrectos.");
         }
@@ -43,17 +50,18 @@ public class Cuenta implements Icuenta{
      * Devuelve los fondos de la cuenta bancaria.
      */
     @Override
-    public void consultarFondos(){
+    public void consultarFondos() {
         System.out.println("Saldo de la cuenta: " + fondos);
     }
 
     /**
      * Metodo que verifica las credenciales de la cuenta bancaria del usuario.
-     * @param noCuenta 
+     * 
+     * @param noCuenta
      * @param nip
      * @return true en caso de que conincidan, false en otro caso.
      */
-    public boolean ingresar(int noCuenta, int nip){
+    public boolean ingresar(int noCuenta, int nip) {
         if (noCuenta == this.noCuenta && nip == this.nip) {
             return true;
         }
@@ -62,9 +70,10 @@ public class Cuenta implements Icuenta{
 
     /**
      * devuelve el Cliente al que está asociado esta cuenta bancaria.
+     * 
      * @return
      */
-    public Cliente getClienteAsociado(){
+    public Cliente getClienteAsociado() {
         return this.clienteAsociado;
     }
 }

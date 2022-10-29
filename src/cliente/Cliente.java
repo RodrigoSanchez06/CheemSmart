@@ -191,4 +191,13 @@ public class Cliente {
     public void getId(int id) {
         this.id = id;
     }
+
+    /**
+     * regresa la cuenta asociada del cliente
+     * 
+     * @return cuenta asociada
+     */
+    public Icuenta getCuentaAsociada() {
+        return this.cuentaAsociada;
+    }
 }

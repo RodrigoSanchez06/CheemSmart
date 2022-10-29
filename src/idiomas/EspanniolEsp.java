@@ -177,4 +177,36 @@ public class EspanniolEsp implements Idioma {
     public String entregaProgramada() {
         return "Ostia Su pedido estará llegando el 20/nov/2022";
     }
+
+    /**
+     * Hace saber al usuario las opciones de compra.
+     * 
+     * @return opciones de compra
+     */
+    @Override
+    public String opcionesEnCompra() {
+        return "1. - introducir otro producto.\n"
+                + "2. - Finalizar la Compra\n"
+                + "3. - Cancelar la Compra.";
+    }
+
+    /**
+     * Hace saber al usuario que debe introducir su nip
+     * 
+     * @return aviso introducir no de cuenta.
+     */
+    @Override
+    public String introduceNip() {
+        return "Introduce tu nip chaval:";
+    }
+
+    /**
+     * Hace saber al usuario que introduzca su num de cuenta
+     * 
+     * @return aviso de introducir no de Cuenta
+     */
+    @Override
+    public String introduceNoCuenta() {
+        return "Introduce tu numero de cuenta, tio:";
+    }
 }

@@ -94,6 +94,27 @@ public interface Idioma {
     public String entregaProgramada();
 
     /**
+     * Hace saber al usuario las opciones de compra.
+     * 
+     * @return opciones de compra
+     */
+    public String opcionesEnCompra();
+
+    /**
+     * Hace saber al usuario que debe introducir su nip
+     * 
+     * @return aviso introducir no de cuenta.
+     */
+    public String introduceNip();
+
+    /**
+     * Hace saber al usuario que introduzca su num de cuenta
+     * 
+     * @return aviso de introducir no de Cuenta
+     */
+    public String introduceNoCuenta();
+
+    /**
      * Asigna la probabilidad reduciendo/aumentando la probabilidad entre
      * departamentos de adquirir un desciento dependiendo la región,
      */
