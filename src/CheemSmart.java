@@ -2,7 +2,6 @@
 import java.util.Scanner;
 
 import cliente.Cliente;
-import cliente.ProxyCatalogo;
 
 public class CheemSmart {
 
@@ -13,7 +12,6 @@ public class CheemSmart {
 
         Scanner entrada = new Scanner(System.in);
         Tienda tienda = new Tienda();
-        ProxyCatalogo proxyCatalogo = new ProxyCatalogo();
         boolean salir = false;
 
         System.out.println("\n******Bienvenido a CheemSmart******\n");
@@ -60,6 +58,8 @@ public class CheemSmart {
 
                 tienda.cambioIdioma(clienteActual.getPaisDeOrigen()); // Cambia el idioma al del cliente.
                 tienda.getIdioma().saludo();
+                tienda.getIdioma().asignaProbabilidadesDescuentos();
+                tienda.getIdioma().descuentoPropaganda(null, null);
                 int opcionUsuario;
 
                 while (true) { // Valida las opciones del usuario.
@@ -74,7 +74,7 @@ public class CheemSmart {
                                     tienda.getCatalogo().imprimirCatalogo();
                                     break;
                                 case 2:
-                                    tienda.hacerCompra();
+                                    tienda.getCatalogo().imprimirCatalogo();
                                     System.out.println(tienda.hacerCompra());
                                     break;
                                 case 3:
