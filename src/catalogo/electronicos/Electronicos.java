@@ -11,7 +11,7 @@ import catalogo.Producto;
  */
 public class Electronicos implements Departamento {
 
-    private String nombreDepartamento = "Electrodomesticos";
+    private String nombreDepartamento = "Electronicos";
     private ArrayList<Producto> electro = new ArrayList<Producto>();
 
     /**
